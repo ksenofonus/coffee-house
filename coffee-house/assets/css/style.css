@@ -7,28 +7,36 @@
 html {
   scroll-behavior: smooth;
 }
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 body {
+  font-family: Inter, sans-serif;
   background-color: #E1D4C9;
+  font-weight: 400;
   font-size: 16px;
   line-height: 150%;
+  color: #403F3D;
 }
 .container {
   max-width: 1440px;
   margin: 0 auto;
   padding: 20px 40px 40px 40px;
 }
+/*header start*/
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 20px;
 }
 .header_logo {
   width: 100px;
   height: 60px;
 }
 .header_menu {
-  padding: 0;
-  margin: 0;
   display: flex;
   align-items: center;
   gap: 40px;
@@ -49,3 +57,48 @@ body {
   text-decoration: none;
   color: #403F3D;
 }
+/*header end*/
+/* enjoy start */
+.enjoy {
+  background-image: url(../images/enjoy_back.jpg);
+  background-position: 0% 0%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 100px;
+  border-radius: 40px;
+  /* min-height: 644px; */
+}
+.enjoy-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  justify-content: space-between;
+  max-width: 530px;
+}
+.enjoy_title {
+  margin: 0;
+  padding: 0;
+  font-size: 72px;
+  font-weight: 600;
+  color: #E1D4C9;
+  line-height: 105%;
+}
+.enjoy_title span {
+  color: #B0907A;
+  font-style: italic;
+}
+.enjoy_content {
+  color: #E1D4C9;
+  max-width: 480px;
+}
+.enjoy_button {
+  display: block;
+  width: 200px;
+  text-align: center;
+  padding: 20px 78px;
+  border-radius: 100px;
+  background-color: #E1D4C9;
+  color: #403F3D;
+  text-decoration: none;
+}
+/* enjoy end */
