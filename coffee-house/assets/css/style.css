@@ -12,3 +12,40 @@ body {
   font-size: 16px;
   line-height: 150%;
 }
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 20px 40px 40px 40px;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header_logo {
+  width: 100px;
+  height: 60px;
+}
+.header_menu {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  list-style: none;
+}
+.header_menu a{
+  text-decoration: none;
+  color: #403F3D;
+}
+.header_link {
+  width: 72px;
+  min-height: 24px;
+}
+.header_link a {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  text-decoration: none;
+  color: #403F3D;
+}
