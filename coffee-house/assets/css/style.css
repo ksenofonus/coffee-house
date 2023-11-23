@@ -127,6 +127,7 @@ h2 {
   justify-content: space-between;
   align-items: center;
   flex-wrap: nowrap;
+  margin-bottom: 40px;
 }
 .arrow {
   display: flex;
@@ -172,6 +173,22 @@ h2 {
   font-weight: 600;
   line-height: 125%;
   margin-top: 16px;
+}
+.control-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.control_item {
+  display: block;
+  width: 40px;
+  height: 4px;
+  background-color: #C1B6AD;
+  border-radius: 100px;
+}
+.control_item__active {
+  background-color: #665F55;
 }
 /*favourite end*/
 
