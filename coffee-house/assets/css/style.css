@@ -111,11 +111,11 @@ h2 {
 }
 /* enjoy end */
 /*favourite start*/
-.favcoffee_title {
+.section_title {
   text-align: center;
   margin-bottom: 40px;
 }
-.favcoffee_title span {
+.section_title span {
   color: #B0907A;
   font-style: italic;
 }
@@ -173,3 +173,39 @@ h2 {
   margin-top: 16px;
 }
 /*favourite end*/
+
+/* about start */
+.photo-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1360px;
+  min-height: 1060px;
+  justify-content: space-between;
+  gap: 40px;
+
+}
+.photo_column {
+  display: flex;
+  flex-direction: column;
+  max-width: 660px;
+  gap: 40px;
+  overflow: hidden;
+}
+.photo-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 660px;
+  height: 590px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.small-photo {
+  height: 430px;
+}
+
+.photo-item img {
+  width: 726px;
+  height: 726px;
+}
+/* about end */
