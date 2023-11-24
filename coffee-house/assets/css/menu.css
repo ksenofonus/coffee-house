@@ -96,6 +96,7 @@ header {
   background-color: #665F55;
   border: 1px solid #665F55;
   color: #E1D4C9;
+  cursor: auto;
 }
 .tab-active .icon {
   background-color: #E1D4C9;
@@ -133,6 +134,10 @@ header {
   margin-bottom: 40px;
   border-radius: 40px;
   border: 1px solid #C1B6AD;
+  transition: all .5s linear;
+}
+.menu-item:hover {
+  transform: scale(1.05);
 }
 .item-photo {
   display: flex;
