@@ -193,6 +193,10 @@ h2 {
 /*favourite end*/
 
 /* about start */
+.about_title {
+  text-align: left;
+  letter-spacing: 0.4px;
+}
 .photo-container {
   display: flex;
   flex-wrap: wrap;
@@ -200,7 +204,6 @@ h2 {
   min-height: 1060px;
   justify-content: space-between;
   gap: 40px;
-
 }
 .photo_column {
   display: flex;
@@ -264,7 +267,7 @@ h2 {
   display: flex;
   align-items: center;
   width: 200px;
-  padding: 20px;
+  padding: 12px 20px 13px;
   border-radius: 100px;
   border: 1px solid #665F55;
   background-color: #E1D4C9;
@@ -289,9 +292,11 @@ h2 {
   flex-direction: column;
   margin-left: 8px;
   font-weight: 600;
+  text-align: left;
 }
 .app-button_name span:first-child {
   font-size: 10px;
+  margin-bottom: 4px;
 }
 
 /* mobileapp end */
@@ -302,7 +307,7 @@ footer {
   border-radius: 40px;
   display: flex;
   gap: 100px;
-  align-items: center;
+  /* align-items: center; */
   color: #E1D4C9;
   font-weight: 600;;
 }
@@ -310,30 +315,32 @@ footer {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  gap: 40px;
+  /* gap: 40px; */
   max-width: 530px;
 }
 .tagline {
   font-size: 60px;
   font-weight: 600;
   line-height: 125%;
+  letter-spacing: 0.5px;
+  margin-bottom: 40px;
 }
 .tagline span {
   font-style: italic;
   color: #B0907A;
 }
-
 .media-button {
   background-color: #665F55;
   width: 60px;
   height: 60px;
   border-radius: 50%;
   border: 1px solid #C1B6AD;
-  margin-left: 12px;
+  margin-left: 8px;
   cursor: pointer;
 }
 .twitter {
   background: url('../images/twitter.svg') 50% 50% no-repeat;
+  margin-left: 0;
 }
 .instagram {
   background: url('../images/instagram.svg') 50% 50% no-repeat;
@@ -344,11 +351,15 @@ footer {
 .contact_title {
   font-size: 24px;
   line-height: 125%;
+  letter-spacing: 0.4px;
+  margin-bottom: 37px;
+  margin-top: 32px;
 }
 .footer-address {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 18px;
+  letter-spacing: 0.2px;
 }
 .footer-address a {
   color:#E1D4C9;
