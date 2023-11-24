@@ -26,7 +26,7 @@ body {
   padding: 20px 40px 40px 40px;
 }
 /*header start*/
-.header {
+header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -45,18 +45,21 @@ body {
 .header_menu a{
   text-decoration: none;
   color: #403F3D;
+  font-weight: 600;
 }
-.header_link {
+.menu_link {
   width: 72px;
   min-height: 24px;
 }
-.header_link a {
+.menu_link a {
   display: flex;
   align-items: flex-start;
   gap: 8px;
   text-decoration: none;
   color: #403F3D;
+  font-weight: 600;
 }
+
 /*header end*/
 section {
   margin-bottom: 100px;
@@ -92,9 +95,8 @@ h2 {
   line-height: 105%;
   letter-spacing: 1px;
 }
-.enjoy_title span {
+.enjoy_title i {
   color: #B0907A;
-  font-style: italic;
 }
 .enjoy_content {
   color: #E1D4C9;
@@ -116,9 +118,8 @@ h2 {
   text-align: center;
   margin-bottom: 38px;
 }
-.section_title span {
+.section_title i {
   color: #B0907A;
-  font-style: italic;
 }
 .slider {
   display: flex;
@@ -307,7 +308,6 @@ footer {
   border-radius: 40px;
   display: flex;
   gap: 100px;
-  /* align-items: center; */
   color: #E1D4C9;
   font-weight: 600;;
 }
@@ -315,7 +315,6 @@ footer {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  /* gap: 40px; */
   max-width: 530px;
 }
 .tagline {
@@ -325,8 +324,7 @@ footer {
   letter-spacing: 0.5px;
   margin-bottom: 40px;
 }
-.tagline span {
-  font-style: italic;
+.tagline i {
   color: #B0907A;
 }
 .media-button {

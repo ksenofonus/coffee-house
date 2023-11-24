@@ -4,15 +4,150 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../assets/css/normalize.css">
+  <link rel="stylesheet" href="../assets/css/menu.css">
   <title>Menu</title>
 </head>
 <body>
   <div class="container">
-    <header></header>
+    <header>
+      <div class="header_logo">
+      <a href="../index.html"><img src="../assets/images/logo.png" alt="resourcelogo"></a>
+    </div>
+    <nav class="nav">
+      <ul class="header_menu">
+        <li class="header_menu-item"><a href="#favcoffee">Favorite coffee</a></li>
+        <li class="header_menu-item"><a href="#about">About</a></li>
+        <li class="header_menu-item"><a href="#mobileapp">Mobile app</a></li>
+        <li class="header_menu-item"><a href="#">Contact us</a></li>
+      </ul>
+    </nav>
+    <div class="menu_link">
+      <div class="link-container">
+        <span>Menu</span>
+        <img src="../assets/images/coffee-cup.svg">
+      </div>
+    </header>
     <main>
-      <section class="menu"></section>
+      <section class="menu">
+        <h1 class="menu-header">
+          Behind each of our cups hides an <i>amazing surprise</i>
+        </h1>
+        <div class="tabs">
+          <button class="tabs-item coffee tab-active">
+            <span class="icon"></span>
+            <span class="tabs-item_name">Coffee</span>
+          </button>
+          <button class="tabs-item tea">
+            <span class="icon"></span>
+            <span class="tabs-item_name">Tea</span>
+          </button>
+          <dbutton class="tabs-item dessert">
+            <span class="icon"></span>
+            <span class="tabs-item_name">Dessert</span>
+          </dbutton>
+        </div>
+        <div class="menu-container">
+          <article class="menu-item">
+            <div class="item-photo">
+              <img src="../assets/images/menu/coffee-1.jpg" alt="Irish">
+            </div>
+            <div class="item-description">
+              <div><h3 class="item-title">Irish coffee</h3>
+              <p class="item-content">Fragrant black coffee with Jameson Irish whiskey and whipped milk</p>
+            </div>
+              <span class="item-price">$7.00</span>
+            </div>
+          </article>
+          <article class="menu-item">
+            <div class="item-photo"><img src="../assets/images/menu/coffee-2.jpg" alt="Kahlua">
+            </div>
+            <div class="item-description">
+              <div><h3 class="item-title">Kahlua coffee</h3>
+              <p class="item-content">Classic coffee with milk and Kahlua liqueur under a cap of frothed milk</p>
+              </div>
+              <span class="item-price">$7.00</span>
+            </div>
+          </article>
+          <article class="menu-item">
+            <div class="item-photo"><img src="../assets/images/menu/coffee-3.jpg" alt="Honey raf">
+            </div>
+            <div class="item-description">
+              <div><h3 class="item-title">Honey raf</h3>
+              <p class="item-content">Espresso with frothed milk, cream and aromatic honey</p>
+            </div>
+              <span class="item-price">$5.50</span>
+            </div>
+          </article>
+          <article class="menu-item">
+            <div class="item-photo"><img src="../assets/images/menu/coffee-4.jpg" alt="Ice cappuccino">
+            </div>
+            <div class="item-description">
+            <div>
+              <h3 class="item-title">Ice cappuccino</h3>
+              <p class="item-content">Cappuccino with soft thick foam in summer version with ice</p>
+            </div>
+              <span class="item-price">$5.00</span>
+            </div>
+          </article>
+          <article class="menu-item">
+            <div class="item-photo"><img src="../assets/images/menu/coffee-5.jpg" alt="Espresso">
+            </div>
+            <div class="item-description">
+            <div>
+              <h3 class="item-title">Espresso</h3>
+              <p class="item-content">Classic black coffee</p></div>
+              <span class="item-price">$4.50</span>
+            </div>
+          </article>
+          <article class="menu-item">
+            <div class="item-photo"><img src="../assets/images/menu/coffee-6.jpg" alt="Latte">
+            </div>
+            <div class="item-description">
+            <div><h3 class="item-title">Latte</h3>
+              <p class="item-content">Espresso coffee with the addition of steamed milk and dense milk foam</p></div>
+              <span class="item-price">$5.50</span>
+            </div>
+          </article>
+          <article class="menu-item">
+            <div class="item-photo"><img src="../assets/images/menu/coffee-7.jpg" alt="Latte macchiato">
+            </div>
+            <div class="item-description">
+            <div><h3 class="item-title">Latte macchiato</h3>
+              <p class="item-content">Espresso with frothed milk and chocolate</p></div>
+              <span class="item-price">$5.50</span>
+            </div>
+          </article>
+          <article class="menu-item">
+            <div class="item-photo"><img src="../assets/images/menu/coffee-8.jpg" alt="Coffee with cognac">
+            </div>
+            <div class="item-description">
+            <div><h3 class="item-title">Coffee with cognac</h3>
+              <p class="item-content">Fragrant black coffee with cognac and whipped cream</p>
+            </div>
+            <span class="item-price">$6.50</span></div>
+          </article>
+        </div>
+      </section>
     </main>
-    <footer></footer>
+    <footer>
+      <div class="footer_column">
+        <p class="tagline">Sip, Savor, Smile. <i>It&rsquo;s coffee time!</i></p>
+        <div class="media-wrapper">
+          <button class="media-button twitter"></button>
+          <button class="media-button instagram"></button>
+          <button class="media-button facebook"></button>
+        </div>
+      </div>
+      <div class="footer_column">
+        <h3 class="contact_title">Contact us</h3>
+        <div class="footer-address">
+          <p class="address">8558 Green Rd., &nbsp;LA</p>
+          <a href="tel:+16035550123" class="tel">+1 (603) 555-0123</a>
+          <p class="schedule">Mon-Sat: 9:00 AM – 23:00 PM</p>
+        </div>
+      </div>
+    </footer>
   </div>
 </body>
 </html>
