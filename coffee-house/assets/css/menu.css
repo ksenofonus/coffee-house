@@ -96,7 +96,7 @@ header {
   background-color: #665F55;
   border: 1px solid #665F55;
   color: #E1D4C9;
-  cursor: auto;
+  pointer-events: none;
 }
 .tab-active .icon {
   background-color: #E1D4C9;
