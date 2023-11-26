@@ -31,19 +31,16 @@ header {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
- 
 }
 .header_logo {
   width: 100px;
   height: 60px;
-  pointer-events: none;
 }
 .header_menu {
   display: flex;
   align-items: center;
   gap: 43px;
   list-style: none;
-
 }
 .header_menu a{
   text-decoration: none;
@@ -119,6 +116,8 @@ h2 {
   color: #E1D4C9;
 }
 .enjoy_button {
+  position: relative;
+  box-sizing: border-box;
   display: block;
   width: 200px;
   text-align: center;
@@ -128,6 +127,19 @@ h2 {
   color: #403F3D;
   text-decoration: none;
   font-weight: 600;
+  transition: all .5s ease;
+}
+.enjoy_button img {
+  position: absolute;
+  top: 33%;
+  right: 32%;
+  display: none;
+}
+.enjoy_button:hover {
+  padding-left: 60px;
+}
+.enjoy_button:hover img {
+  display: block;
 }
 /* enjoy end */
 /*favourite start*/
@@ -157,7 +169,18 @@ h2 {
   border-radius: 50%;
   background-color:#E1D4C9;
   cursor: pointer;
+  transition: all 0.7s ease;
 }
+.arrow:hover {
+ background-color: #665F55;
+}
+.arrow svg path{
+  transition: all 0.8s ease;
+}
+.arrow:hover svg path {
+  stroke: #E1D4C9;
+ }
+
 .slider-container {
   display: flex;
   justify-content: space-between;
@@ -290,6 +313,10 @@ h2 {
   border: 1px solid #665F55;
   background-color: #E1D4C9;
   cursor: pointer;
+  transition: all 1s ease;
+}
+.app-button:hover {
+  background-color: #665F55;
 }
 .brand-logo {
   width: 36px;
@@ -299,11 +326,19 @@ h2 {
   background-image: url('../images/icon-apple.svg');
   background-repeat: no-repeat;
   background-position: center;
+  transition: all 1s ease;
+}
+.app-button:hover .apple {
+  background-image: url('../images/icon-apple-light.svg');
 }
 .google {
   background-image: url('../images/icon-google.svg');
   background-repeat: no-repeat;
   background-position: center;
+  transition: all 1s ease;
+}
+.app-button:hover .google {
+  background-image: url('../images/icon-google-light.svg');
 }
 .app-button_name {
   display: flex;
@@ -311,10 +346,14 @@ h2 {
   margin-left: 8px;
   font-weight: 600;
   text-align: left;
+  transition: all 0.7s ease;
 }
 .app-button_name span:first-child {
   font-size: 10px;
   margin-bottom: 4px;
+}
+.app-button:hover .app-button_name {
+  color: #E1D4C9;
 }
 
 /* mobileapp end */
@@ -352,16 +391,17 @@ footer {
   border: 1px solid #C1B6AD;
   margin-left: 8px;
   cursor: pointer;
+  transition: all 1s ease;
 }
-.twitter {
-  background: url('../images/twitter.svg') 50% 50% no-repeat;
+.media-button:first-child {
   margin-left: 0;
 }
-.instagram {
-  background: url('../images/instagram.svg') 50% 50% no-repeat;
+.media-button:hover {
+  background-color: #E1D4C9;
 }
-.facebook {
-  background: url('../images/facebook.svg') 50% 50% no-repeat;
+.media-button:hover svg path {
+  stroke: #403F3D;
+  transition: all 1s ease;
 }
 .contact_title {
   font-size: 24px;
@@ -371,21 +411,27 @@ footer {
   margin-top: 32px;
 }
 .footer-address {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
   letter-spacing: 0.2px;
 }
 .footer-address a {
+  display: block;
+  max-width: 185px;
   color:#E1D4C9;
   text-decoration: none;
+  margin-bottom: 18px;
 }
+
+.footer-address a:hover {
+  border-bottom: 2px solid #E1D4C9;
+}
+
 .address::before {
   content: url('../images/pin-alt.svg');
   width: 20px;
   height: 20px;
   margin-right: 8px;
 }
+
 .tel::before {
   content: url('../images/phone.svg');
   width: 20px;

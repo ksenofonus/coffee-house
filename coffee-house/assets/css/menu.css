@@ -35,6 +35,10 @@ header {
 .header_logo {
   width: 100px;
   height: 60px;
+  transition: all .5s ease;
+}
+.header_logo:hover {
+  transform: scale(1.1);
 }
 .header_menu {
   display: flex;
@@ -42,10 +46,20 @@ header {
   gap: 43px;
   list-style: none;
 }
+.header_menu-item {
+  transition: all .5s ease;
+}
+.header_menu-item:hover {
+  transform: scale(1.1);
+}
 .header_menu a{
   text-decoration: none;
   font-weight: 600;
   color: #403F3D;
+  transition: all .5s ease;
+}
+.header_menu a:hover {
+  color:#665F55;
 }
 .link-container {
   display: flex;
@@ -91,8 +105,15 @@ header {
   background-color:#E1D4C9;
   font-weight: 600;
   cursor: pointer;
+  transition: all .7s ease;
 }
 .tab-active {
+  background-color: #665F55;
+  border: 1px solid #665F55;
+  color: #E1D4C9;
+  pointer-events: none;
+}
+.tabs-item:hover {
   background-color: #665F55;
   border: 1px solid #665F55;
   color: #E1D4C9;
@@ -101,6 +122,7 @@ header {
 .tab-active .icon {
   background-color: #E1D4C9;
 }
+
 .icon {
   display: block;
   width: 30px;
@@ -205,16 +227,17 @@ footer {
   border: 1px solid #C1B6AD;
   margin-left: 8px;
   cursor: pointer;
+  transition: all 1s ease;
 }
-.twitter {
-  background: url('../images/twitter.svg') 50% 50% no-repeat;
+.media-button:first-child {
   margin-left: 0;
 }
-.instagram {
-  background: url('../images/instagram.svg') 50% 50% no-repeat;
+.media-button:hover {
+  background-color: #E1D4C9;
 }
-.facebook {
-  background: url('../images/facebook.svg') 50% 50% no-repeat;
+.media-button:hover svg path {
+  stroke: #403F3D;
+  transition: all 1s ease;
 }
 .contact_title {
   font-size: 24px;
@@ -224,14 +247,18 @@ footer {
   margin-top: 32px;
 }
 .footer-address {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
   letter-spacing: 0.2px;
 }
 .footer-address a {
+  display: block;
+  max-width: 185px;
   color:#E1D4C9;
   text-decoration: none;
+  margin-bottom: 18px;
+  transition: all 1s ease;
+}
+.footer-address a:hover {
+  border-bottom: 2px solid #E1D4C9;
 }
 .address::before {
   content: url('../images/pin-alt.svg');
