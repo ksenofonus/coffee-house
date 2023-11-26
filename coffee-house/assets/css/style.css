@@ -31,25 +31,42 @@ header {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+ 
 }
 .header_logo {
   width: 100px;
   height: 60px;
+  pointer-events: none;
 }
 .header_menu {
   display: flex;
   align-items: center;
   gap: 43px;
   list-style: none;
+
 }
 .header_menu a{
   text-decoration: none;
   color: #403F3D;
   font-weight: 600;
+  transition: all .5s ease;
+}
+.header_menu-item {
+  transition: all .5s ease;
+}
+.header_menu-item:hover {
+  transform: scale(1.1);
+}
+.header_menu a:hover {
+  color:#665F55;
 }
 .menu_link {
   width: 72px;
   min-height: 24px;
+  transition: all 1s ease;
+}
+.menu_link:hover {
+  border-bottom: 2px solid #403F3D;
 }
 .menu_link a {
   display: flex;
