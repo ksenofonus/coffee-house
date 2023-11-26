@@ -35,6 +35,7 @@ header {
 .header_logo {
   width: 100px;
   height: 60px;
+  pointer-events: none;
 }
 .header_menu {
   display: flex;
@@ -303,12 +304,10 @@ h2 {
   gap: 20px;
 }
 .app-button {
-  margin: 0;
-  padding: 0;
   display: flex;
   align-items: center;
   width: 200px;
-  padding: 12px 20px 13px;
+  padding: 12px 20px 12px;
   border-radius: 100px;
   border: 1px solid #665F55;
   background-color: #E1D4C9;
@@ -350,7 +349,7 @@ h2 {
 }
 .app-button_name span:first-child {
   font-size: 10px;
-  margin-bottom: 4px;
+  line-height: 140%;
 }
 .app-button:hover .app-button_name {
   color: #E1D4C9;
@@ -415,12 +414,14 @@ footer {
 }
 .footer-address a {
   display: block;
-  max-width: 185px;
+  max-width: 190px;
   color:#E1D4C9;
   text-decoration: none;
   margin-bottom: 18px;
 }
-
+.footer-address a:last-child {
+  max-width: 170px;
+}
 .footer-address a:hover {
   border-bottom: 2px solid #E1D4C9;
 }
