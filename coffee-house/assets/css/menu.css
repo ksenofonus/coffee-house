@@ -116,9 +116,11 @@ header {
 .tabs-item:hover {
   background-color: #665F55;
   border: 1px solid #665F55;
-  color: #E1D4C9;
-  pointer-events: none;
 }
+.tabs-item:hover .tabs-item_name {
+  color: #E1D4C9;
+}
+
 .tab-active .icon {
   background-color: #E1D4C9;
 }
