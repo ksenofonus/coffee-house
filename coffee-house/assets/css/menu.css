@@ -403,4 +403,49 @@ footer {
     padding-bottom: 103px;
   }
 }
+@media screen and (max-width: 380px){
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .menu-header {
+    font-size: 32px;
+    line-height: 125%;
+    letter-spacing: 0.3px;
+  }
+  .menu-container {
+    height: 2144px;
+    gap: 42px;
+  }
+  .tabs {
+    justify-content: space-between;
+    gap: 0;
+  }
+  .tabs-item {
+    padding-top: 7px;
+    line-height: 150%;
+    letter-spacing: 0.5px;
+  }
+  .tabs-item:hover {
+    pointer-events: none;
+  }
+  .item-description {
+    padding-top: 22px;
+  }
+  .refresh:hover {
+    pointer-events: none;
+  }
+  .tagline {
+    font-size: 32px;
+    letter-spacing: 0.1px;
+  }
+  footer {
+    padding: 60px 16px 61px 16px;
+    gap: 0;
+  }
+  .contact_title {
+    margin-top: 41px;
+  }
+}
+
 /* media end */
