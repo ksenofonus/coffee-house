@@ -60,6 +60,10 @@ header {
 }
 .header_menu a:hover {
   color:#665F55;
+  text-decoration-color: #665F55;
+  text-decoration-line: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
 }
 .link-container {
   display: flex;
@@ -70,6 +74,7 @@ header {
 }
 .link-container span {
   font-weight: 600;
+  cursor: default;
 }
 /*header end*/
 /*menu start*/
