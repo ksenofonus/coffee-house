@@ -242,12 +242,10 @@ h2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-.slider-container {
-  display: flex;
   max-width: 480px;
   overflow: hidden;
 }
+
 .slider_item {
   text-align: center;
   display: flex;
@@ -355,7 +353,7 @@ h2 {
 }
 .mobileapp_img {
   width: 630px;
-  min-height: 630px;
+  height: 630px;
   background-image: url('../images/mobile-screens.png');
   background-position: center;
   background-repeat: no-repeat;
@@ -585,5 +583,89 @@ footer {
     gap: 70px;
   }
 }
-
+@media screen and (max-width: 380px){
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .enjoy {
+    padding: 60px 16px;
+    line-height: 115%;
+  }
+  .enjoy_title {
+    font-size: 42px;
+    line-height: 115%;
+    letter-spacing: 0.5px;
+  }
+  .enjoy_content {
+    line-height: 150%;
+  }
+  .section_title {
+    font-size: 32px;
+    line-height: 125%;
+    margin-bottom: 40px;
+  }
+  .arrow {
+    display: none;
+  }
+  .slider {
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .slider-container {
+    max-width: 348px;
+  }
+  .slider_image {
+    width: 348px;
+    height: 348px;
+    transform: scale(0.7);
+    justify-content: center;
+    display: flex;
+    align-items: center;
+  }
+  .slider_image img {
+    width: 490px;
+    height: 500px;
+  }
+  .slider_description h3 {
+    margin-top: 22px;
+    letter-spacing: 0.2px;
+  }
+  .photo_column {
+    flex-direction: column;
+    max-width: 380px;
+  }
+  .photo-item {
+    max-width: 348px;
+    height: 590px;
+  }
+  .mobileapp_promo {
+    width: 100%;
+  }
+  .buttons-wrapper {
+    flex-direction: column;
+  }
+  .mobileapp_img {
+    width: 348px;
+    height: 348px;
+    background-size: contain;
+  }
+  #mobileapp {
+    gap: 40px;;
+  }
+  #mobileapp .section_title {
+    letter-spacing: 0.4px;
+  }
+  .tagline {
+    font-size: 32px;
+    letter-spacing: 0.1px;
+  }
+  footer {
+    padding: 62px 16px;
+    gap: 0;
+  }
+  .contact_title {
+    margin-top: 41px;
+  }
+}
 /* media end */
