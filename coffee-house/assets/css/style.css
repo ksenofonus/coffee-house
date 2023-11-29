@@ -552,16 +552,27 @@ footer {
   .enjoy_button img {
     display: block;
   }
-  .photo-container {
-    
-  }
   .photo_column {
-    
+    flex-direction: column;
+    max-width: 688px;
   }
   .photo-item {
-    
+    width: 688px;
+    height: 590px;
   }
   .small-photo {
+    display: none;
+  }
+  .mobileapp_wrapper {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .mobileapp_promo {
+    max-width: 688px;
+  }
+  .mobileapp_img {
+    width: 688px;
   }
   #mobileapp {
     flex-direction: column;
@@ -571,6 +582,7 @@ footer {
     flex-direction: column;
     padding-left: 60px;
     padding-right: 60px;
+    gap: 70px;
   }
 }
 
