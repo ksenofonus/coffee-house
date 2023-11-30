@@ -57,24 +57,13 @@ header {
 .header_menu-item {
   transition: all .5s ease;
 }
-.header_menu-item:hover {
-  transform: scale(1.1);
-}
-.header_menu a:hover {
-  color:#665F55;
-  text-decoration-color: #665F55;
-  text-decoration-line: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 5px;
-}
+
 .menu_link {
   width: 72px;
   min-height: 24px;
   transition: all 1s ease;
 }
-.menu_link:hover {
-  border-bottom: 2px solid #403F3D;
-}
+
 .menu_link a {
   display: flex;
   align-items: flex-start;
@@ -192,12 +181,7 @@ h2 {
   right: 32%;
   display: none;
 }
-.enjoy_button:hover {
-  padding-left: 48px;
-}
-.enjoy_button:hover img {
-  display: block;
-}
+
 /* enjoy end */
 /*favourite start*/
 .section_title {
@@ -228,15 +212,11 @@ h2 {
   cursor: pointer;
   transition: all 0.7s ease;
 }
-.arrow:hover {
- background-color: #665F55;
-}
+
 .arrow svg path{
   transition: all 0.8s ease;
 }
-.arrow:hover svg path {
-  stroke: #E1D4C9;
- }
+
 
 .slider-container {
   display: flex;
@@ -327,9 +307,7 @@ h2 {
   height: 726px;
   transition: all 1s ease;
 }
-.photo-item:hover img{
-  transform: scale(0.95);
-}
+
 /* about end */
 /* mobileapp start */
 #mobileapp {
@@ -373,9 +351,7 @@ h2 {
   cursor: pointer;
   transition: all 1s ease;
 }
-.app-button:hover {
-  background-color: #665F55;
-}
+
 .brand-logo {
   width: 36px;
   height: 36px;
@@ -386,18 +362,14 @@ h2 {
   background-position: center;
   transition: all 1s ease;
 }
-.app-button:hover .apple {
-  background-image: url('../images/icon-apple-light.svg');
-}
+
 .google {
   background-image: url('../images/icon-google.svg');
   background-repeat: no-repeat;
   background-position: center;
   transition: all 1s ease;
 }
-.app-button:hover .google {
-  background-image: url('../images/icon-google-light.svg');
-}
+
 .app-button_name {
   display: flex;
   flex-direction: column;
@@ -410,9 +382,7 @@ h2 {
   font-size: 10px;
   line-height: 140%;
 }
-.app-button:hover .app-button_name {
-  color: #E1D4C9;
-}
+
 
 /* mobileapp end */
 /* footer start */
@@ -454,13 +424,7 @@ footer {
 .media-button:first-child {
   margin-left: 0;
 }
-.media-button:hover {
-  background-color: #E1D4C9;
-}
-.media-button:hover svg path {
-  stroke: #403F3D;
-  transition: all 1s ease;
-}
+
 .contact_title {
   font-size: 24px;
   line-height: 125%;
@@ -481,9 +445,7 @@ footer {
 .footer-address a:last-child {
   max-width: 170px;
 }
-.footer-address a:hover {
-  border-bottom: 2px solid #E1D4C9;
-}
+
 
 .address::before {
   content: url('../images/pin-alt.svg');
@@ -506,6 +468,58 @@ footer {
 }
 /* footer end */
 /* media start */
+@media screen and (min-width: 768px) {
+  .header_menu-item:hover {
+    transform: scale(1.1);
+  }
+  .header_menu a:hover {
+    color:#665F55;
+    text-decoration-color: #665F55;
+    text-decoration-line: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 5px;
+  }
+  .menu_link:hover {
+    border-bottom: 2px solid #403F3D;
+  }
+  .enjoy_button:hover {
+    padding-left: 48px;
+  }
+  .enjoy_button:hover img {
+    display: block;
+  }
+  .arrow:hover {
+    background-color: #665F55;
+   }
+  .arrow:hover svg path {
+    stroke: #E1D4C9;
+   }
+   .photo-item:hover img{
+    transform: scale(0.95);
+  }
+  .app-button:hover {
+    background-color: #665F55;
+  }
+  .app-button:hover .apple {
+    background-image: url('../images/icon-apple-light.svg');
+  }
+  .app-button:hover .google {
+    background-image: url('../images/icon-google-light.svg');
+  }
+  .app-button:hover .app-button_name {
+    color: #E1D4C9;
+  }
+  .media-button:hover {
+    background-color: #E1D4C9;
+  }
+  .media-button:hover svg path {
+    stroke: #403F3D;
+    transition: all 1s ease;
+  }
+  .footer-address a:hover {
+    border-bottom: 2px solid #E1D4C9;
+  }
+}
 @media screen and (max-width: 768px){
   .header_menu {
     position:absolute;
