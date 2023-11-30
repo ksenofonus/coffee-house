@@ -194,7 +194,6 @@ h2 {
 .slider {
   display: flex;
   width: 100%;
-  gap: 40px;
   justify-content: space-between;
   align-items: center;
   flex-wrap: nowrap;
@@ -212,12 +211,9 @@ h2 {
   cursor: pointer;
   transition: all 0.7s ease;
 }
-
 .arrow svg path{
   transition: all 0.8s ease;
 }
-
-
 .slider-container {
   display: flex;
   justify-content: space-between;
@@ -225,14 +221,12 @@ h2 {
   max-width: 480px;
   overflow: hidden;
 }
-
 .slider_item {
   text-align: center;
   display: flex;
   justify-content: center;
   flex-direction: column;
 }
-
 .slider_image img{
   width: 480px;
   height: 480px;
@@ -520,6 +514,59 @@ footer {
     border-bottom: 2px solid #E1D4C9;
   }
 }
+@media screen and (max-width: 1290px){
+.mobileapp_wrapper {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .mobileapp_promo {
+    max-width: 688px;
+  }
+  .mobileapp_img {
+    width: 688px;
+  }
+  #mobileapp {
+    flex-direction: column;
+    gap: 100px;
+    align-items: center;
+  }
+  .photo-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .photo_column {
+    max-width: 688px;
+    gap: 40px;
+  }
+  .photo-item {
+    width: 688px;
+    height: 590px;
+  }
+  .small-photo {
+    height: 430px;
+  }
+  footer {
+    gap: 0;
+    justify-content: space-between;
+  }
+}
+@media screen and (max-width: 1090px){
+  footer {
+    padding-left: 40px;
+    padding-right: 40px;
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 970px){
+  footer {
+      flex-direction: column;
+      padding-left: 60px;
+      padding-right: 60px;
+      gap: 70px;
+  }
+}
 @media screen and (max-width: 768px){
   .header_menu {
     position:absolute;
@@ -564,47 +611,41 @@ footer {
   .enjoy_button img {
     display: block;
   }
-  .photo_column {
-    flex-direction: column;
-    max-width: 688px;
-  }
-  .photo-item {
-    width: 688px;
-    height: 590px;
-  }
   .small-photo {
     display: none;
   }
-  .mobileapp_wrapper {
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-  }
-  .mobileapp_promo {
-    max-width: 688px;
+}
+@media screen and (max-width: 755px){
+  .photo-item {
+    max-width: 600px;
+    height: 560px;
   }
   .mobileapp_img {
-    width: 688px;
-  }
-  #mobileapp {
-    flex-direction: column;
-    gap: 100px;
-  }
-  footer {
-    flex-direction: column;
-    padding-left: 60px;
-    padding-right: 60px;
-    gap: 70px;
-  }
-}
-@media screen and (max-width: 380px){
-  .container {
-    padding-left: 16px;
-    padding-right: 16px;
+    width: 550px;
+    height: 550px;
+    background-size: contain;
   }
   .enjoy {
     padding: 60px 16px;
     line-height: 115%;
+  }
+}
+@media screen and (max-width: 700px){
+  .arrow {
+    display: none;
+  }
+  .slider {
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 660px){
+  .photo-item {
+    max-width: 540px;
+    height: 530px;
+  }
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
   }
   .enjoy_title {
     font-size: 42px;
@@ -618,13 +659,6 @@ footer {
     font-size: 32px;
     line-height: 125%;
     margin-bottom: 40px;
-  }
-  .arrow {
-    display: none;
-  }
-  .slider {
-    justify-content: flex-start;
-    align-items: flex-start;
   }
   .slider-container {
     max-width: 348px;
@@ -645,24 +679,11 @@ footer {
     margin-top: 22px;
     letter-spacing: 0.2px;
   }
-  .photo_column {
-    flex-direction: column;
-    max-width: 380px;
-  }
-  .photo-item {
-    max-width: 348px;
-    height: 590px;
-  }
   .mobileapp_promo {
     width: 100%;
   }
   .buttons-wrapper {
     flex-direction: column;
-  }
-  .mobileapp_img {
-    width: 348px;
-    height: 348px;
-    background-size: contain;
   }
   #mobileapp {
     gap: 40px;;
@@ -680,6 +701,37 @@ footer {
   }
   .contact_title {
     margin-top: 41px;
+  }
+}
+@media screen and (max-width: 600px){
+  .photo-item {
+    max-width: 490px;
+    height: 590px;
+  }
+  .mobileapp_img {
+    width: 450px;
+    height: 450px;
+    background-size: contain;
+  }
+}
+
+@media screen and (max-width: 460px){
+  /* .photo_column {
+    flex-direction: column;
+    max-width: 380px;
+  } */
+  .photo-item {
+    max-width: 349px;
+  }
+  .mobileapp_img {
+    width: 348px;
+    height: 348px;
+    background-size: contain;
+  }
+}
+@media screen and (max-width: 380px){
+  .slider-container {
+    max-width: 347px;
   }
 }
 /* media end */
