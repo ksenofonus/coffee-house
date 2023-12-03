@@ -55,7 +55,6 @@ header {
   color: #403F3D;
   transition: all .5s ease;
 }
-
 .link-container {
   display: flex;
   align-items: center;
@@ -158,8 +157,6 @@ header {
   color: #E1D4C9;
   pointer-events: none;
 }
-
-
 .tab-active .icon {
   background-color: #E1D4C9;
 }
