@@ -737,8 +737,13 @@ footer {
     background-size: contain;
   }
 }
-
-@media screen and (max-width: 460px){
+@media screen and (max-width: 530px) {
+  .photo-item {
+    max-width: 440px;
+    height: 590px;
+  }
+}
+@media screen and (max-width: 475px){
   /* .photo_column {
     flex-direction: column;
     max-width: 380px;
@@ -752,7 +757,7 @@ footer {
     background-size: contain;
   }
 }
-@media screen and (max-width: 380px){
+@media screen and (max-width: 390px){
   .slider-container {
     max-width: 347px;
   }

@@ -429,8 +429,9 @@ footer {
   .menu-container {
     justify-content: center;
     margin-bottom: 0;
-    height: 1052px;
+    min-height: 1052px;
     overflow: hidden;
+    gap: 40px;
   }
   .refresh {
     display: flex;
