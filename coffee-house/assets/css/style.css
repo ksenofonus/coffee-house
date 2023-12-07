@@ -266,9 +266,20 @@ h2 {
   height: 4px;
   background-color: #C1B6AD;
   border-radius: 100px;
+  position: relative;
+  overflow: hidden;
 }
 .control_item__active {
   background-color: #665F55;
+}
+.progressbar {
+  display: block;
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: #665F55;
+  border-radius: 100px;
 }
 /*favourite end*/
 
@@ -800,3 +811,15 @@ footer {
   }
 }
 /* media end */
+
+@keyframes progress {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+.control_item-active .progressbar {
+  animation: progress 7s linear;
+}
