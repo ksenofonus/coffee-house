@@ -226,6 +226,10 @@ h2 {
 }
 .item-wrapper {
   display: flex;
+  position: relative;
+  left: 0;
+  max-width: calc(480px*3);
+  transition: all 0.7s ease;
 }
 .slider_item {
   text-align: center;
@@ -661,6 +665,9 @@ footer {
   .small-photo {
     display: none;
   }
+  .item-wrapper {
+    width: calc(480px*3);
+  }
 }
 @media screen and (max-width: 755px){
   .photo-item {
@@ -721,6 +728,9 @@ footer {
   .slider_image img {
     width: 490px;
     height: 500px;
+  }
+  .item-wrapper {
+    width: calc(348px*3);
   }
   .slider_description h3 {
     margin-top: 22px;
@@ -784,6 +794,9 @@ footer {
 @media screen and (max-width: 390px){
   .slider-container {
     max-width: 347px;
+  }
+  .item-wrapper {
+    width: calc(347px*3);
   }
 }
 /* media end */

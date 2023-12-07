@@ -19,3 +19,35 @@ navItem.forEach((item) => {
 })
 
 // burger end
+
+//slider start
+const prevBtn = document.querySelector('.left-arrow');
+const nextBtn = document.querySelector('.right-arrow');
+const control = document.querySelectorAll('.control_item');
+const slider = document.querySelector('.item-wrapper');
+const sliderContainer = document.querySelector('.slider-container');
+
+let sliderPosition = 0;
+let controlIndex = 0;
+
+const moveToRight = () => {
+  sliderPosition += sliderContainer.offsetWidth;
+  if (sliderPosition >= slider.offsetWidth) {
+    sliderPosition = 0;
+    controlIndex = 0;
+  }
+  slider.style.left = -sliderPosition + 'px';
+}
+const moveToLeft = () => {
+  sliderPosition -= sliderContainer.offsetWidth;
+  if (sliderPosition < 0) {
+    sliderPosition = slider.offsetWidth - sliderContainer.offsetWidth;
+    controlIndex = control.length - 1;
+  }
+  slider.style.left = -sliderPosition + 'px';
+}
+
+nextBtn.addEventListener('click', () => moveToRight());
+prevBtn.addEventListener('click', () => moveToLeft());
+
+//slider end
