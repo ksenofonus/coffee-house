@@ -6,6 +6,7 @@
 }
 html {
   scroll-behavior: smooth;
+  height: 100%;
 }
 * {
   padding: 0;
@@ -403,16 +404,21 @@ footer {
 }
 @media screen and (max-width: 768px){
   /* header-burger */
+  body.no-scroll {
+    overflow: hidden;
+    height: 100%;
+  }
   .container {
     position: relative;
     overflow: hidden;
+    height: 100%;
   }
   .menu-wrapper {
-    position:absolute;
+    position:fixed;
     top: 80px;
     right: -100%;
     width: 100vw;
-    min-height: 150vh;
+    height: 100%;
     background-color: #E1D4C9;
     flex-direction: column;
     align-items: center;
@@ -421,6 +427,7 @@ footer {
     z-index: 10;
     gap: 100px;
     transition: all 1s linear;
+    overflow: auto;
   }
   .header_menu {
     flex-direction: column;

@@ -9,6 +9,7 @@ const inactiveLink = document.querySelector('.link-container');
 const toggleBurger = () => {
   headerMenu.classList.toggle('header_menu__active');
   burgerBtn.classList.toggle('burger-active');
+  document.querySelector('body').classList.toggle('no-scroll');
 }
 burgerBtn.addEventListener('click', () => toggleBurger());
 
