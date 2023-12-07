@@ -224,6 +224,9 @@ h2 {
   max-width: 480px;
   overflow: hidden;
 }
+.item-wrapper {
+  display: flex;
+}
 .slider_item {
   text-align: center;
   display: flex;
