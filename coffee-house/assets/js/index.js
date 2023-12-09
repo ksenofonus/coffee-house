@@ -35,15 +35,19 @@ const moveToRight = () => {
   control.forEach((item) => {
     item.classList.remove('control_item-active');
   })
-  sliderPosition += sliderContainer.offsetWidth;
-  if (sliderPosition >= slider.offsetWidth) {
+  if (sliderPosition >= (slider.offsetWidth - sliderContainer.offsetWidth)) {
     sliderPosition = 0;
+    slider.style.left = -sliderPosition + 'px';
     controlIndex = 0;
-  }
+  } else {
+    sliderPosition += sliderContainer.offsetWidth;
     slider.style.left = -sliderPosition + 'px';
     controlIndex += 1;
-  currentControl(controlIndex);
+  }
+    console.log(sliderPosition, controlIndex);
+    currentControl(controlIndex);
 }
+
 const moveToLeft = () => {
   control.forEach((item) => {
     item.classList.remove('control_item-active');
@@ -57,34 +61,28 @@ const moveToLeft = () => {
   controlIndex -= 1;
   currentControl(controlIndex);
 }
-
-// const progressMove = () => {
-//   let progessWidth = 1;
-//   let move = setInterval((progress), 6000);
-// }
-
-// const progress = () => {
-//   if (progressWidth >= 100) {
-//     clearInterval(move)
-//   } else {
-//     progessWidth += 1;
-
-//   }
-// }
-
+let timer = 0;
+let autoMove = () => {
+  clearInterval(timer);
+  timer = setInterval(() => {
+  moveToRight();
+}, 7000);
+}
 
 const currentControl = (index) => {
   control[index].classList.add('control_item-active');
 }
 
-// control.forEach((item, index) => {
-//   item.addEventListener()
-// })
-
-nextBtn.addEventListener('click', () => moveToRight());
-prevBtn.addEventListener('click', () => moveToLeft());
-
-setInterval (() => {
+autoMove();
+nextBtn.addEventListener('click', () => {
+  clearInterval(timer);
   moveToRight();
-}, 7000);
+  autoMove();
+});
+prevBtn.addEventListener('click', () => {
+  clearInterval(timer);
+  moveToLeft();
+  autoMove();
+});
+
 //slider end
