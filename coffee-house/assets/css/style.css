@@ -812,6 +812,7 @@ footer {
 }
 /* media end */
 
+/*slider animation start*/
 @keyframes progress {
   from {
     width: 0;
@@ -823,3 +824,7 @@ footer {
 .control_item-active .progressbar {
   animation: progress 7s linear;
 }
+.progressbar.pause {
+  animation-play-state: paused;
+}
+/*slider animation end*/

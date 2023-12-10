@@ -27,6 +27,7 @@ const progress = document.querySelectorAll('.progressbar');
 const control = document.querySelectorAll('.control_item');
 const slider = document.querySelector('.item-wrapper');
 const sliderContainer = document.querySelector('.slider-container');
+const sliderItem  = document.querySelectorAll('.slider_item');
 
 let sliderPosition = 0;
 let controlIndex = 0;
@@ -44,7 +45,6 @@ const moveToRight = () => {
     slider.style.left = -sliderPosition + 'px';
     controlIndex += 1;
   }
-    console.log(sliderPosition, controlIndex);
     currentControl(controlIndex);
 }
 
@@ -73,6 +73,7 @@ const currentControl = (index) => {
   control[index].classList.add('control_item-active');
 }
 
+
 autoMove();
 nextBtn.addEventListener('click', () => {
   clearInterval(timer);
@@ -84,5 +85,28 @@ prevBtn.addEventListener('click', () => {
   moveToLeft();
   autoMove();
 });
+
+sliderItem.forEach((item, index) => {
+  item.addEventListener('mousedown', () => {
+    progress[index].classList.add('pause');
+  }
+)});
+sliderItem.forEach((item, index) => {
+  item.addEventListener('mouseover', () => {
+    progress[index].classList.add('pause');
+  }
+)});
+
+sliderItem.forEach((item, index) => {
+  item.addEventListener('mouseup', () => {
+    progress[index].classList.remove('pause');
+  }
+)});
+sliderItem.forEach((item, index) => {
+  item.addEventListener('mouseout', () => {
+    progress[index].classList.remove('pause');
+  }
+)});
+
 
 //slider end
