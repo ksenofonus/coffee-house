@@ -32,19 +32,20 @@ const sliderItem  = document.querySelectorAll('.slider_item');
 let sliderPosition = 0;
 let controlIndex = 0;
 
+let isPaused = false;
+
 const moveToRight = () => {
   control.forEach((item) => {
     item.classList.remove('control_item-active');
   })
   if (sliderPosition >= (slider.offsetWidth - sliderContainer.offsetWidth)) {
     sliderPosition = 0;
-    slider.style.left = -sliderPosition + 'px';
     controlIndex = 0;
   } else {
     sliderPosition += sliderContainer.offsetWidth;
-    slider.style.left = -sliderPosition + 'px';
     controlIndex += 1;
   }
+    slider.style.left = -sliderPosition + 'px';
     currentControl(controlIndex);
 }
 
@@ -52,27 +53,37 @@ const moveToLeft = () => {
   control.forEach((item) => {
     item.classList.remove('control_item-active');
   })
-  sliderPosition -= sliderContainer.offsetWidth;
-  if (sliderPosition < 0) {
+  // sliderPosition -= sliderContainer.offsetWidth;
+  if (sliderPosition <= 0) {
     sliderPosition = slider.offsetWidth - sliderContainer.offsetWidth;
     controlIndex = control.length - 1;
   }
-    slider.style.left = -sliderPosition + 'px';
-  controlIndex -= 1;
+  else {
+    sliderPosition -= sliderContainer.offsetWidth;
+    controlIndex = controlIndex - 1;
+  }
+  slider.style.left = -sliderPosition + 'px';
   currentControl(controlIndex);
 }
 let timer = 0;
 let autoMove = () => {
-  clearInterval(timer);
-  timer = setInterval(() => {
-  moveToRight();
-}, 7000);
+  // clearInterval(timer);
+  if (!isPaused) {
+    timer = setInterval(moveToRight, 7000);
+  }
 }
 
 const currentControl = (index) => {
   control[index].classList.add('control_item-active');
 }
 
+const pauseSlider = () => {
+  if (!isPaused) {
+    isPaused = true;
+  } else {
+    isPaused = false;
+  }
+}
 
 autoMove();
 nextBtn.addEventListener('click', () => {
@@ -86,27 +97,29 @@ prevBtn.addEventListener('click', () => {
   autoMove();
 });
 
-sliderItem.forEach((item, index) => {
-  item.addEventListener('mousedown', () => {
-    progress[index].classList.add('pause');
-  }
-)});
-sliderItem.forEach((item, index) => {
-  item.addEventListener('mouseover', () => {
-    progress[index].classList.add('pause');
-  }
-)});
+// sliderItem.forEach((item, index) => {
+//   item.addEventListener('mousedown', () => {
+//     progress[index].classList.add('pause');
+//   }
+// )});
+// sliderItem.forEach((item, index) => {
+//   item.addEventListener('mouseover', () => {
+//     progress[index].classList.add('pause');
+//     pauseSlider();
+//   }
+// )});
 
-sliderItem.forEach((item, index) => {
-  item.addEventListener('mouseup', () => {
-    progress[index].classList.remove('pause');
-  }
-)});
-sliderItem.forEach((item, index) => {
-  item.addEventListener('mouseout', () => {
-    progress[index].classList.remove('pause');
-  }
-)});
+// sliderItem.forEach((item, index) => {
+//   item.addEventListener('mouseup', () => {
+//     progress[index].classList.remove('pause');
+//   }
+// )});
+// sliderItem.forEach((item, index) => {
+//   item.addEventListener('mouseout', () => {
+//     progress[index].classList.remove('pause');
+//     pauseSlider();
+//   }
+// )});
 
 
 //slider end
