@@ -38,13 +38,12 @@ const moveToRight = () => {
   })
   if (sliderPosition >= (slider.offsetWidth - sliderContainer.offsetWidth)) {
     sliderPosition = 0;
-    slider.style.left = -sliderPosition + 'px';
     controlIndex = 0;
   } else {
     sliderPosition += sliderContainer.offsetWidth;
-    slider.style.left = -sliderPosition + 'px';
     controlIndex += 1;
   }
+    slider.style.left = -sliderPosition + 'px';
     currentControl(controlIndex);
 }
 
@@ -52,13 +51,16 @@ const moveToLeft = () => {
   control.forEach((item) => {
     item.classList.remove('control_item-active');
   })
-  sliderPosition -= sliderContainer.offsetWidth;
-  if (sliderPosition < 0) {
+  // sliderPosition -= sliderContainer.offsetWidth;
+  if (sliderPosition <= 0) {
     sliderPosition = slider.offsetWidth - sliderContainer.offsetWidth;
     controlIndex = control.length - 1;
   }
-    slider.style.left = -sliderPosition + 'px';
-  controlIndex -= 1;
+  else {
+    sliderPosition -= sliderContainer.offsetWidth;
+    controlIndex = controlIndex - 1;
+  }
+  slider.style.left = -sliderPosition + 'px';
   currentControl(controlIndex);
 }
 let timer = 0;
