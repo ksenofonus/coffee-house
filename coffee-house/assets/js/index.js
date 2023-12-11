@@ -64,62 +64,44 @@ const moveToLeft = () => {
   }
   slider.style.left = -sliderPosition + 'px';
   currentControl(controlIndex);
+  console.log(controlIndex);
 }
-let timer = 0;
+
 let autoMove = () => {
-  // clearInterval(timer);
-  if (!isPaused) {
-    timer = setInterval(moveToRight, 7000);
-  }
+  progress.forEach((item) => {
+    item.addEventListener('animationend', () => moveToRight());
+  })
 }
 
 const currentControl = (index) => {
   control[index].classList.add('control_item-active');
 }
 
-const pauseSlider = () => {
-  if (!isPaused) {
-    isPaused = true;
-  } else {
-    isPaused = false;
-  }
-}
-
 autoMove();
-nextBtn.addEventListener('click', () => {
-  clearInterval(timer);
-  moveToRight();
-  autoMove();
-});
-prevBtn.addEventListener('click', () => {
-  clearInterval(timer);
-  moveToLeft();
-  autoMove();
-});
+nextBtn.addEventListener('click', () => moveToRight());
+prevBtn.addEventListener('click', () => moveToLeft());
 
-// sliderItem.forEach((item, index) => {
-//   item.addEventListener('mousedown', () => {
-//     progress[index].classList.add('pause');
-//   }
-// )});
-// sliderItem.forEach((item, index) => {
-//   item.addEventListener('mouseover', () => {
-//     progress[index].classList.add('pause');
-//     pauseSlider();
-//   }
-// )});
+sliderItem.forEach((item, index) => {
+  item.addEventListener('mousedown', () => {
+    progress[index].classList.add('pause');
+  }
+)});
+sliderItem.forEach((item, index) => {
+  item.addEventListener('mouseover', () => {
+    progress[index].classList.add('pause');
+  }
+)});
 
-// sliderItem.forEach((item, index) => {
-//   item.addEventListener('mouseup', () => {
-//     progress[index].classList.remove('pause');
-//   }
-// )});
-// sliderItem.forEach((item, index) => {
-//   item.addEventListener('mouseout', () => {
-//     progress[index].classList.remove('pause');
-//     pauseSlider();
-//   }
-// )});
+sliderItem.forEach((item, index) => {
+  item.addEventListener('mouseup', () => {
+    progress[index].classList.remove('pause');
+  }
+)});
+sliderItem.forEach((item, index) => {
+  item.addEventListener('mouseout', () => {
+    progress[index].classList.remove('pause');
+  }
+)});
 
 
 //slider end
