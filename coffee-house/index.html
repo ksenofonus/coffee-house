@@ -15,27 +15,25 @@
       <div class="header_logo">
         <img src="./assets/images/logo.png" alt="resourcelogo">
       </div>
-      <nav class="nav">
-        <ul class="header_menu">
-          <li class="header_menu-item"><a href="#favcoffee">Favorite coffee</a></li>
-          <li class="header_menu-item"><a href="#about">About</a></li>
-          <li class="header_menu-item"><a href="#mobileapp">Mobile app</a></li>
-          <li class="header_menu-item"><a href="#contact">Contact us</a></li>
-        </ul>
-      </nav>
-      <div class="menu_link">
-        <a href="./menu/menu.html">
-          <span>Menu</span>
-          <img src="./assets/images/coffee-cup.svg" alt="cup">
-        </a>
-      </div>
+      <div class="menu-wrapper">
+          <nav class="nav">
+            <ul class="header_menu">
+              <li class="header_menu-item"><a href="#favcoffee">Favorite coffee</a></li>
+              <li class="header_menu-item"><a href="#about">About</a></li>
+              <li class="header_menu-item"><a href="#mobileapp">Mobile app</a></li>
+              <li class="header_menu-item"><a href="#contact">Contact us</a></li>
+            </ul>
+          </nav>
+          <div class="menu_link">
+            <a href="./menu/menu.html">
+              <span>Menu</span>
+              <img src="./assets/images/coffee-cup.svg" alt="cup">
+            </a>
+          </div>
+        </div>
       <div class="header-burger">
         <span class="header-burger_line"></span>
         <span class="header-burger_line"></span>
-      </div>
-      <div class="header-burger-close">
-        <span class="header-burger-close_line"></span>
-        <span class="header-burger-close_line"></span>
       </div>
     </header>
     <main>
@@ -62,32 +60,34 @@
             </svg>
           </button>
           <div class="slider-container">
-            <div class="slider_item slider_active">
-              <div class="slider_image">
-                <img src="./assets/images/frappuccino.png" alt="frappucino">
-              </div>
-              <div class="slider_description">
-                <h3>S&#39;mores Frappuccino</h3>
-                <p>This new drink takes an espresso and mixes it with brown sugar and cinnamon before being topped with oat milk.</p>
-                <p class="slider_price">$5.50</p>
-              </div>
-            </div>
-            <div class="slider_item">
-              <div class="slider_image"></div>
+            <div class="item-wrapper">
+              <div class="slider_item slider_active">
+                <div class="slider_image">
+                  <img src="./assets/images/coffee-slider-1.png" alt="frappucino">
+                </div>
                 <div class="slider_description">
-                  <h3>Caramel Macchiato</h3>
-                  <p>Fragrant and unique classic espresso with rich caramel-peanut syrup, with cream under whipped thick foam.</p>
-                  <p class="slider_price">$5.00</p>
-              </div>
-            </div>
-            <div class="slider_item">
-                <div class="slider_image"></div>
-                  <div class="slider_description">
-                    <h3>Ice coffee</h3>
-                    <p>A popular summer drink that tones and invigorates. Prepared from coffee, milk and ice.</p>
-                    <p class="slider_price">$4.50</p>
+                  <h3>S&#39;mores Frappuccino</h3>
+                  <p>This new drink takes an espresso and mixes it with brown sugar and cinnamon before being topped with oat milk.</p>
+                  <p class="slider_price">$5.50</p>
                 </div>
               </div>
+              <div class="slider_item">
+                <div class="slider_image"><img src="./assets/images/coffee-slider-2.png" alt="Macchiato"></div>
+                  <div class="slider_description">
+                    <h3>Caramel Macchiato</h3>
+                    <p>Fragrant and unique classic espresso with rich caramel-peanut syrup, with cream under whipped thick foam.</p>
+                    <p class="slider_price">$5.00</p>
+                </div>
+              </div>
+              <div class="slider_item">
+                  <div class="slider_image"><img src="./assets/images/coffee-slider-3.png" alt="Ice"></div>
+                    <div class="slider_description">
+                      <h3>Ice coffee</h3>
+                      <p>A popular summer drink that tones and invigorates. Prepared from coffee, milk and ice.</p>
+                      <p class="slider_price">$4.50</p>
+                  </div>
+                </div>
+            </div>
             </div>
             <button class="arrow right-arrow">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -96,9 +96,15 @@
             </button>
         </div>
         <div class="control-container">
-          <span class="control_item control_item__active"></span>
-          <span class="control_item"></span>
-          <span class="control_item"></span>
+          <span class="control_item control_item-active">
+            <span class="progressbar"></span>
+          </span>
+          <span class="control_item">
+            <span class="progressbar"></span>
+          </span>
+          <span class="control_item">
+            <span class="progressbar"></span>
+          </span>
         </div>
       </section>
       <section id="about">
@@ -173,5 +179,6 @@
       </div>
     </footer>
   </div>
+  <script src="./assets/js/index.js"></script>
 </body>
 </html>
