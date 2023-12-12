@@ -64,7 +64,6 @@ const moveToLeft = () => {
   }
   slider.style.left = -sliderPosition + 'px';
   currentControl(controlIndex);
-  console.log(controlIndex);
 }
 
 let autoMove = () => {
@@ -78,8 +77,8 @@ const currentControl = (index) => {
 }
 
 autoMove();
-nextBtn.addEventListener('click', () => moveToRight());
-prevBtn.addEventListener('click', () => moveToLeft());
+nextBtn.addEventListener('click', moveToRight, false);
+prevBtn.addEventListener('click', moveToLeft, false);
 
 sliderItem.forEach((item, index) => {
   item.addEventListener('mousedown', () => {
@@ -102,6 +101,33 @@ sliderItem.forEach((item, index) => {
     progress[index].classList.remove('pause');
   }
 )});
+
+// swipe
+let x1 = null;
+const touchStart = (event) => {
+  x1 = event.touches[0].clientX;
+}
+const touchMove = (event) => {
+  if (!x1) {
+    return false;
+  }
+  let x2 = event.touches[0].clientX;
+  let diff = x2 - x1;
+  if (diff < 0) {
+    moveToRight();
+  } else {
+    moveToLeft();
+  }
+  x1 = null;
+  y1 = null;
+}
+slider.addEventListener('touchstart', touchStart, false);
+slider.addEventListener('touchmove', touchMove, false);
+
+
+
+// swipe
+
 
 
 //slider end
