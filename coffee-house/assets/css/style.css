@@ -135,19 +135,33 @@ h2 {
 }
 /* enjoy start */
 .enjoy {
+  position: relative;
   background-image: url(../images/enjoy_back.jpg);
   background-position: 0% 49%;
   background-repeat: no-repeat;
   background-size: cover;
   padding: 100px;
   border-radius: 40px;
+  overflow: hidden;
+  z-index: 2;
 }
 .enjoy-container {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 40px;
   justify-content: space-between;
   max-width: 530px;
+  z-index: 2;
+}
+.enjoyVideo {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  object-fit: cover;
 }
 .enjoy_title {
   margin: 0;
