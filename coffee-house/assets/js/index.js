@@ -81,23 +81,23 @@ nextBtn.addEventListener('click', moveToRight, false);
 prevBtn.addEventListener('click', moveToLeft, false);
 
 sliderItem.forEach((item, index) => {
-  item.addEventListener('mousedown', () => {
+  item.addEventListener('pointerdown', () => {
     progress[index].classList.add('pause');
   }
 )});
 sliderItem.forEach((item, index) => {
-  item.addEventListener('mouseover', () => {
+  item.addEventListener('pointerover', () => {
     progress[index].classList.add('pause');
   }
 )});
 
 sliderItem.forEach((item, index) => {
-  item.addEventListener('mouseup', () => {
+  item.addEventListener('pointerup', () => {
     progress[index].classList.remove('pause');
   }
 )});
 sliderItem.forEach((item, index) => {
-  item.addEventListener('mouseout', () => {
+  item.addEventListener('pointerout', () => {
     progress[index].classList.remove('pause');
   }
 )});
@@ -119,7 +119,6 @@ const touchMove = (event) => {
     moveToLeft();
   }
   x1 = null;
-  y1 = null;
 }
 slider.addEventListener('touchstart', touchStart, false);
 slider.addEventListener('touchmove', touchMove, false);
