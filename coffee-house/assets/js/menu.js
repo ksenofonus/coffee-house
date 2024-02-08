@@ -52,7 +52,6 @@ async function getDataProducts() {
       }
     }
     createCards(coffee);
-    console.log(coffee, tea, dessert);
 }
 
 const menuBody = document.querySelector('.menu-container');
@@ -62,27 +61,29 @@ const createCards = (data) => {
     menuBody.insertAdjacentHTML('beforeend', `<div class="menu-item"><div class="item-photo"><img src="/assets/images/menu/${data[i].name}.jpg" alt="${data[i].name}"></div><div class="item-description"><div><h3 class="item-title">${data[i].name}</h3><p class="item-content">${data[i].description}</p></div><span class="item-price">${data[i].price}</span></div></div>`);
   }
 }
-// const showMenu = (data) => {
-//   coffeeBtn.addEventListener('click', )
-// }
+const opacity = () => {
+  menuBody.classList.add('opacity');
+  menuBody.addEventListener('animationend', () => {
+    menuBody.classList.remove('opacity');
+  })
+}
+
 //switch menu list start
 const switchTabs = () => {
   tabs.forEach((item) => {
     item.addEventListener('click', () => {
+      opacity();
       tabs.forEach((item) => {
         item.classList.remove('tab-active');
     });
       item.classList.add('tab-active');
-      if (item.classList.contains('coffee')) {
-        console.log('coffee');
+      if (item.id === 'coffee') {
         menuBody.replaceChildren(``);
         createCards(coffee);
-      } else if (item.classList.contains('tea')){
-        console.log('tea');
+      } else if (item.id === 'tea'){
         menuBody.replaceChildren(``);
         createCards(tea);
-      } else if (item.classList.contains('dessert')){
-        console.log('dessert');
+      } else if (item.id === 'dessert'){
         menuBody.replaceChildren(``);
         createCards(dessert);
     }

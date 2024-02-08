@@ -523,3 +523,18 @@ footer {
 }
 
 /* media end */
+
+/* fade-in fade-out start */
+@keyframes fade {
+  100% {
+    opacity: 1;
+  }
+  0% {
+    opacity: 0;
+  }
+}
+.opacity {
+  animation-name: fade;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+}
