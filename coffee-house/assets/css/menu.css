@@ -145,7 +145,7 @@ header {
   justify-content: center;
   align-items: center;
   gap: 16px;
-  margin-bottom: 40px;
+  /* margin-bottom: 40px; */
 }
 .tabs-item {
   display: flex;
@@ -190,12 +190,22 @@ header {
 }
 /* button group end */
 .menu-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: all 1s ease;
+  margin-bottom: 40px;
+  align-items: center;
+}
+.product-body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 40px;
   align-content: space-between;
-  margin-bottom: 100px;
+  margin-bottom: 40px;
+  padding-top: 40px;
+  transition: all 1s ease;
 }
 .menu-item {
   max-width: 310px;
@@ -246,7 +256,8 @@ header {
   height: 60px;
   border-radius: 100px;
   border: 1px solid #665F55;
-  margin: 40px auto 100px;
+  margin-right: auto;
+  margin-left: auto;
   display: none;
   cursor: pointer;
   transition: all 0.7s ease;
@@ -262,6 +273,7 @@ footer {
   gap: 100px;
   color: #E1D4C9;
   font-weight: 600;;
+  margin-top: 100px;
 }
 .footer_column {
   display: flex;
@@ -350,7 +362,7 @@ footer {
 }
 /* footer end */
 /* media start */
-@media screen and (min-width: 769px) {
+@media screen and (hover:hover) {
   .footer-address a:hover::after {
     transform: scaleX(100%);
   }
@@ -358,7 +370,7 @@ footer {
     transform: scale(1.1);
   }
   .header_menu-item:hover {
-    transform: scale(1.1);
+    transform: scale(1);
   }
   .header_menu a:hover {
     color:#665F55;
@@ -387,7 +399,7 @@ footer {
   }
 }
 @media screen and (max-width: 1190px){
-  .menu-container {
+  .product-body {
     gap: 25px;
   }
   footer {
@@ -462,11 +474,13 @@ footer {
     display: block;
   }
   /* header-burger */
-  .menu-container {
+  /* .menu-container {
+  } */
+  .product-body {
+    /* max-height: 1092px; */
+    overflow: hidden;
     justify-content: center;
     margin-bottom: 0;
-    min-height: 1052px;
-    overflow: hidden;
     gap: 40px;
   }
   .refresh {
@@ -490,8 +504,10 @@ footer {
     line-height: 125%;
     letter-spacing: 0.3px;
   }
-  .menu-container {
-    height: 2157px;
+  .product-body {
+    max-height: 2157px;
+  }
+  .product-body {
     gap: 42px;
   }
   .tabs {
@@ -538,3 +554,4 @@ footer {
   animation-duration: 1s;
   animation-timing-function: linear;
 }
+/* fade-in fade-out end */
