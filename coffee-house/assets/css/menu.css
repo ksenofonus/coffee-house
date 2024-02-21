@@ -190,14 +190,6 @@ header {
 }
 /* button group end */
 .menu-container {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  transition: all 1s ease;
-  margin-bottom: 40px;
-  align-items: center;
-}
-.product-body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -207,6 +199,9 @@ header {
   padding-top: 40px;
   transition: all 1s ease;
 }
+/* .product-body {
+  
+} */
 .menu-item {
   max-width: 310px;
   display: flex;
@@ -249,7 +244,6 @@ header {
   line-height: 125%;
 }
 .refresh {
-  display: flex;
   justify-content: center;
   align-items: center;
   width: 60px;
@@ -262,7 +256,9 @@ header {
   cursor: pointer;
   transition: all 0.7s ease;
 }
-
+.refresh-visible {
+  display: flex;
+}
 /*menu end*/
 /* footer start */
 footer {
@@ -399,7 +395,7 @@ footer {
   }
 }
 @media screen and (max-width: 1190px){
-  .product-body {
+  .menu-container {
     gap: 25px;
   }
   footer {
@@ -476,16 +472,16 @@ footer {
   /* header-burger */
   /* .menu-container {
   } */
-  .product-body {
-    /* max-height: 1092px; */
+  .menu-container {
+    /* height: 1092px; */
     overflow: hidden;
     justify-content: center;
-    margin-bottom: 0;
+    margin-bottom: 40px;
     gap: 40px;
   }
-  .refresh {
+  /* .refresh {
     display: flex;
-  }
+  } */
   footer {
     flex-direction: column;
     padding-left: 60px;
@@ -504,10 +500,8 @@ footer {
     line-height: 125%;
     letter-spacing: 0.3px;
   }
-  .product-body {
+  .menu-container {
     max-height: 2157px;
-  }
-  .product-body {
     gap: 42px;
   }
   .tabs {
