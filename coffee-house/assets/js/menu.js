@@ -40,24 +40,20 @@ const menuBody = document.querySelector('.menu-container');
 const refreshBtn = document.querySelector('.refresh');
 let productsType = coffee;
 let id = 0;
-let length = 4;
+let length = productsType.length;
 let wmatch = window.matchMedia("(max-width: 768px)");
+let i = 0;
 
-const checkBtn = () => {
+const checkWidth = () => {
   if (document.body.clientWidth <= 768) {
-    if (productsType.length <= 4) {
-      refreshBtn.classList.remove('refresh-visible');
-    }
-    if (productsType.length <= 4) {
-      refreshBtn.classList.add('refresh-visible');
-    }
+    length = 4;
   }
-  
   if (document.body.clientWidth > 768) {
-    refreshBtn.classList.remove('refresh-visible');
+    length = productsType.length;
   }
+  console.log(length);
+  return length;
 }
-checkBtn();
 
 const checkProduct = () => {
   if (id === 0) {
@@ -69,35 +65,50 @@ const checkProduct = () => {
   if (id === 2) {
     productsType = dessert;
   }
+  return productsType;
 }
+checkProduct();
+
+const checkBtn = () => {
+  checkProduct();
+  if (document.body.clientWidth <= 768) {
+    if (productsType.length <= 4) {
+      refreshBtn.classList.remove('refresh-visible');
+    }
+    if (productsType.length > 4) {
+      refreshBtn.classList.add('refresh-visible');
+    }
+  }
+  if (document.body.clientWidth > 768) {
+    refreshBtn.classList.remove('refresh-visible');
+  }
+}
+checkBtn();
+
+
 
 const wchange = () => {
   wmatch.addEventListener('change', (event) => {
     checkProduct();
+    checkWidth();
   if (event.matches) {
     checkBtn();
-    // refreshBtn.classList.add('refresh-visible');
+    refreshBtn.classList.add('refresh-visible');
     menuBody.replaceChildren('');
-    createCards(productsType);
+    createCards(productsType, 0, length);
   } else {
     refreshBtn.classList.remove('refresh-visible');
     menuBody.replaceChildren('');
-    createCards(productsType);
+    createCards(productsType, 0, length);
   }})
 }
 
-
-
 wchange();
 
-const createCards = (products) => {
-  if (document.body.clientWidth <= 768) {
-    length = 4;
-  }
-  if (document.body.clientWidth > 768) {
-    length = productsType.length;
-  }
-  for (let i = 0; i < length; i++) {
+
+
+const createCards = (products, i, length) => {
+  for (i; i < length; i++) {
     menuBody.insertAdjacentHTML('beforeend', `<div class="menu-item opacity"><div class="item-photo"><img src="/assets/images/menu/${products[i].name}.jpg" alt="${products[i].name}"></div><div class="item-description"><div><h3 class="item-title">${products[i].name}</h3><p class="item-content">${products[i].description}</p></div><span class="item-price">${products[i].price}</span></div></div>`);
   }
 }
@@ -119,7 +130,8 @@ async function getDataProducts() {
     }
     checkProduct();
     checkBtn();
-    createCards(productsType);
+    checkWidth();
+    createCards(productsType, 0, length);
 }
 
 
@@ -143,7 +155,8 @@ const switchTabs = (productsType) => {
         id = 2;
       }
       menuBody.replaceChildren(``);
-      createCards(productsType);
+      checkWidth();
+      createCards(productsType, 0, length);
       checkBtn();
   })
 })
@@ -156,20 +169,14 @@ switchTabs(productsType);
 
 getDataProducts();
 
-// const resize = () => {
-//   window.addEventListener('resize', () => {
-//   checkSize();
-//   })
-// }
+//refresh button start
 
-
-
-
-
-
-
-
-// resize();
-
+//refresh button end
+refreshBtn.addEventListener('click', () => {
+  checkProduct();
+  length = productsType.length;
+  createCards(productsType, 4, length);
+  refreshBtn.classList.remove('refresh-visible');
+})
 
 //products end
