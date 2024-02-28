@@ -195,7 +195,7 @@ header {
   justify-content: center;
   gap: 40px;
   align-content: space-between;
-  margin-bottom: 40px;
+  padding-bottom: 40px;
   padding-top: 40px;
   transition: all 1s ease;
 }
@@ -210,6 +210,7 @@ header {
   border-radius: 40px;
   border: 1px solid #C1B6AD;
   transition: all .5s linear;
+  
 }
 
 .item-photo {
@@ -476,7 +477,6 @@ footer {
     /* height: 1092px; */
     overflow: hidden;
     justify-content: center;
-    margin-bottom: 40px;
     gap: 40px;
   }
   /* .refresh {
