@@ -98,8 +98,7 @@ const wchange = () => {
     createCards(productsType, 0, length);
   } else {
     refreshBtn.classList.remove('refresh-visible');
-    menuBody.replaceChildren('');
-    createCards(productsType, 0, length);
+    createCards(productsType, 4, length);
   }})
 }
 
