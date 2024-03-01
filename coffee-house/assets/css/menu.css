@@ -220,6 +220,8 @@ header {
   border-radius: 35px;
   overflow: hidden;
   height: 307px;
+  width: 307px;
+  flex-shrink: 0;
 }
 .item-photo img {
   width: 340px;
@@ -358,6 +360,24 @@ footer {
   margin-right: 8px;
 }
 /* footer end */
+
+/* modal start */
+.modal {
+  position: fixed;
+  box-sizing: border-box;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 800px;
+  min-height: 504px;
+  padding: 16px;
+  background-color: #E1D4C9;
+  border-radius: 40px;
+  display: flex;
+}
+
+/* modal end */
+
 /* media start */
 @media screen and (hover:hover) {
   .footer-address a:hover::after {

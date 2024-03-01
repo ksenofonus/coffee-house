@@ -22,12 +22,10 @@ navItem.forEach((item) => {
 inactiveLink.addEventListener('click', () => {
   toggleBurger();
 })
-
 // burger end
 
 
 //products start
-
 const tabs = document.querySelectorAll('.tabs-item');
 const productsUrl = '../assets/js/products.json';
 let coffee = [];
@@ -177,5 +175,4 @@ refreshBtn.addEventListener('click', () => {
   createCards(productsType, 4, length);
   refreshBtn.classList.remove('refresh-visible');
 })
-
 //products end
