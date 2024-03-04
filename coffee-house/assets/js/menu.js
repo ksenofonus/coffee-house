@@ -176,3 +176,7 @@ refreshBtn.addEventListener('click', () => {
   refreshBtn.classList.remove('refresh-visible');
 })
 //products end
+
+//modal start
+
+//modal end
