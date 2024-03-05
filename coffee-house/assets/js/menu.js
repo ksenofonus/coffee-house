@@ -39,19 +39,8 @@ const refreshBtn = document.querySelector('.refresh');
 let productsType = coffee;
 let id = 0;
 let length = productsType.length;
-let wmatch = window.matchMedia("(max-width: 768px)");
+const wmatch = window.matchMedia("(max-width: 768px)");
 let i = 0;
-
-const checkWidth = () => {
-  if (document.body.clientWidth <= 768) {
-    length = 4;
-  }
-  if (document.body.clientWidth > 768) {
-    length = productsType.length;
-  }
-  console.log(length);
-  return length;
-}
 
 const checkProduct = () => {
   if (id === 0) {
@@ -63,9 +52,21 @@ const checkProduct = () => {
   if (id === 2) {
     productsType = dessert;
   }
-  return productsType;
+  return (productsType);
 }
-checkProduct();
+
+
+const checkWidth = () => {
+  if (document.body.clientWidth <= 768) {
+    length = 4;
+  }
+  if (document.body.clientWidth > 768) {
+    length = productsType.length;
+  }
+  return length;
+}
+
+
 
 const checkBtn = () => {
   checkProduct();
@@ -87,27 +88,50 @@ checkBtn();
 
 const wchange = () => {
   wmatch.addEventListener('change', (event) => {
-    checkProduct();
-    checkWidth();
   if (event.matches) {
+    checkProduct();
     checkBtn();
+    checkWidth();
     refreshBtn.classList.add('refresh-visible');
     menuBody.replaceChildren('');
     createCards(productsType, 0, length);
   } else {
+    checkProduct();
+    console.log(productsType);
+    checkWidth();
     refreshBtn.classList.remove('refresh-visible');
+    length = productsType.length;
     createCards(productsType, 4, length);
   }})
 }
-
 wchange();
 
-
+// const resize = () => {
+//   window.addEventListener('resize', () => {
+//     checkProduct();
+//     if (document.body.clientWidth === 768) {
+//       checkWidth();
+//       checkBtn();
+//       refreshBtn.classList.add('refresh-visible');
+//       menuBody.replaceChildren('');
+//       createCards(productsType, 0, length);
+//     }
+//     if (document.body.clientWidth === 768) {
+//       refreshBtn.classList.remove('refresh-visible');
+//       checkWidth();
+//       checkProduct();
+//       createCards(productsType, 4, length);
+//     }
+//   })
+// }
+// resize();
 
 const createCards = (products, i, length) => {
   for (i; i < length; i++) {
     menuBody.insertAdjacentHTML('beforeend', `<div class="menu-item opacity"><div class="item-photo"><img src="/assets/images/menu/${products[i].name}.jpg" alt="${products[i].name}"></div><div class="item-description"><div><h3 class="item-title">${products[i].name}</h3><p class="item-content">${products[i].description}</p></div><span class="item-price">${products[i].price}</span></div></div>`);
   }
+  const menuItem = document.querySelectorAll('.menu-item');
+  return menuItem;
 }
 
 async function getDataProducts() {
@@ -151,6 +175,7 @@ const switchTabs = (productsType) => {
         productsType = dessert;
         id = 2;
       }
+      checkProduct();
       menuBody.replaceChildren(``);
       checkWidth();
       createCards(productsType, 0, length);
