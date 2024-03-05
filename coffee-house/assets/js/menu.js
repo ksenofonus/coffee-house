@@ -98,6 +98,12 @@ const createModal = (products, i) => {
           </div>
           <button class="close_btn">Close</button>
         </div></div>`)
+  closeModal();
+  chooseSize();
+  chooseAdd();
+}
+
+const closeModal = () => {
   const back = document.querySelector('.back');
   const modal = document.querySelector('.modal');
   const closeModal = document.querySelector('.close_btn');
@@ -111,7 +117,29 @@ const createModal = (products, i) => {
   })
 }
 
+const chooseSize = () => {
+  const sizeBtns = document.querySelectorAll('.size .prop_btn');
+  sizeBtns.forEach((size) => {
+    size.addEventListener('click', () => {
+      sizeBtns.forEach((size) => {
+        size.classList.remove('prop_btn__active');
+      })
+      size.classList.add('prop_btn__active');
+    })
+  })
+}
 
+const chooseAdd = () => {
+  const addBtns = document.querySelectorAll('.additives .prop_btn');
+  addBtns.forEach((add) => {
+    add.addEventListener('click', () => {
+      addBtns.forEach((add) => {
+        add.classList.remove('prop_btn__active');
+      })
+      add.classList.add('prop_btn__active');
+    })
+  })
+}
 //modal end
 
 const checkProduct = () => {
@@ -138,8 +166,6 @@ const checkWidth = () => {
   return length;
 }
 
-
-
 const checkBtn = () => {
   checkProduct();
   if (document.body.clientWidth <= 768) {
@@ -155,8 +181,6 @@ const checkBtn = () => {
   }
 }
 checkBtn();
-
-
 
 const wchange = () => {
   wmatch.addEventListener('change', (event) => {
@@ -212,7 +236,6 @@ async function getDataProducts() {
     checkWidth();
     createCards(productsType, 0, length);
 }
-
 
 const switchTabs = (productsType) => {
   tabs.forEach((item) => {
