@@ -106,31 +106,12 @@ const wchange = () => {
 }
 wchange();
 
-// const resize = () => {
-//   window.addEventListener('resize', () => {
-//     checkProduct();
-//     if (document.body.clientWidth === 768) {
-//       checkWidth();
-//       checkBtn();
-//       refreshBtn.classList.add('refresh-visible');
-//       menuBody.replaceChildren('');
-//       createCards(productsType, 0, length);
-//     }
-//     if (document.body.clientWidth === 768) {
-//       refreshBtn.classList.remove('refresh-visible');
-//       checkWidth();
-//       checkProduct();
-//       createCards(productsType, 4, length);
-//     }
-//   })
-// }
-// resize();
-
 const createCards = (products, i, length) => {
   for (i; i < length; i++) {
     menuBody.insertAdjacentHTML('beforeend', `<div class="menu-item opacity"><div class="item-photo"><img src="/assets/images/menu/${products[i].name}.jpg" alt="${products[i].name}"></div><div class="item-description"><div><h3 class="item-title">${products[i].name}</h3><p class="item-content">${products[i].description}</p></div><span class="item-price">${products[i].price}</span></div></div>`);
   }
   const menuItem = document.querySelectorAll('.menu-item');
+  console.log(menuItem);
   return menuItem;
 }
 
@@ -203,5 +184,63 @@ refreshBtn.addEventListener('click', () => {
 //products end
 
 //modal start
+const createModal = () => {
+  for (i; i < length; i++) {
+    document.body.insertAdjacentHTML('beforeend', `<div class="back"></div>
+    <div class="modal">
+        <div class="item-photo"><img src="/assets/images/menu/${products[i].name}.jpg" alt="${products[i].name}"></div>
+        <div class="item-description">
+          <div class="item_name">
+            <h3 class="item-title">${products[i].name}</h3>
+          <p class="item content">${products[i].description}</p>
+          </div>
+          <div class="prop size">
+            <p class="prop_title">Size</p>
+            <div class="prop_tabs">
+              <button class="prop_btn prop_btn__active">
+                <div class="prop_icon">S</div>
+                <div class="prop_value">${products[i].sizes.s.size}</div>
+              </button>
+              <button class="prop_btn">
+                <div class="prop_icon">M</div>
+                <div class="prop_value">${products[i].sizes.m.size}</div>
+              </button>
+              <button class="prop_btn">
+                <div class="prop_icon">L</div>
+                <div class="prop_value">${products[i].sizes.l.size}</div>
+              </button>
+            </div>
+          </div>
+          <div class="prop additives">
+            <p class="prop_title">Additives</p>
+            <div class="prop_tabs">
+              <button class="prop_btn">
+                <div class="prop_icon">1</div>
+                <div class="prop_value">${products[i].additives[0].name}</div>
+              </button>
+              <button class="prop_btn">
+                <div class="prop_icon">2</div>
+                <div class="prop_value">${products[i].additives[1].name}</div>
+              </button>
+              <button class="prop_btn">
+                <div class="prop_icon">3</div>
+                <div class="prop_value">${products[i].additives[2].name}</div>
+              </button>
+            </div>
+          </div>
+          <div class="total">
+            <h3 class="total_title">Total:</h3>
+            <div class="total_sum">$</div>
+          </div>
+          <div class="alert">
+           <div class="alert_icon">
+            </div> -->
+            <!-- <p class="alert_text">The cost is not final. Download our mobile app to see the final price and place your order. Earn loyalty points and enjoy your favorite coffee with up to 20% discount.</p>
+          </div>
+          <button class="close_btn">Close</button>
+        </div></div>`
+  )}
+}
+
 
 //modal end
