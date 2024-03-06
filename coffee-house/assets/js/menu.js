@@ -116,6 +116,7 @@ const closeModal = () => {
   closeModal.addEventListener('click', () => {
     back.remove();
     modal.remove();
+    document.body.classList.remove('no-scroll');
   })
 }
 
