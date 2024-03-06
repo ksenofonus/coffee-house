@@ -45,7 +45,8 @@ const menuItem = document.querySelectorAll('.menu-item');
 
 //modal start
 const createModal = (products, i) => {
-  document.body.insertAdjacentHTML('beforeend', `<div class="back"></div>
+  document.body.classList.add('no-scroll');
+  document.body.insertAdjacentHTML('afterbegin', `<div class="back"></div>
     <div class="modal">
         <div class="item-photo"><img src="/assets/images/menu/${products[i].name}.jpg" alt="${products[i].name}"></div>
         <div class="item-description">
@@ -110,6 +111,7 @@ const closeModal = () => {
   back.addEventListener('click', () => {
     back.remove();
     modal.remove();
+    document.body.classList.remove('no-scroll');
   })
   closeModal.addEventListener('click', () => {
     back.remove();

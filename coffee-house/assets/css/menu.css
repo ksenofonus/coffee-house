@@ -364,15 +364,17 @@ footer {
 /* modal start */
 .back {
   position: fixed;
+  z-index: 9;
   left: 0;
   top: 0;
   background-color: #403F3DCC;
   opacity: 0.8;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
 }
 .modal {
   position: fixed;
+  z-index: 10;
   box-sizing: border-box;
   left: 50%;
   top: 50%;
@@ -514,6 +516,10 @@ footer {
 }
 /* modal end */
 
+body.no-scroll {
+  overflow: hidden;
+  height: 100%;
+}
 /* media start */
 @media screen and (hover:hover) {
   .footer-address a:hover::after {
@@ -589,10 +595,7 @@ footer {
 }
 @media screen and (max-width: 768px){
   /* header-burger */
-  body.no-scroll {
-    overflow: hidden;
-    height: 100%;
-  }
+  
   .container {
     position: relative;
     overflow: hidden;
