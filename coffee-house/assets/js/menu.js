@@ -57,15 +57,15 @@ const createModal = (products, i) => {
             <p class="prop_title">Size</p>
             <div class="prop_tabs">
               <button class="prop_btn prop_btn__active">
-                <div class="prop_icon">S</div>
+                <div class="prop_icon">${Object.keys(productsType[i].sizes)[0].toUpperCase()}</div>
                 <div class="prop_value">${products[i].sizes.s.size}</div>
               </button>
               <button class="prop_btn">
-                <div class="prop_icon">M</div>
+                <div class="prop_icon">${Object.keys(productsType[i].sizes)[1].toUpperCase()}</div>
                 <div class="prop_value">${products[i].sizes.m.size}</div>
               </button>
               <button class="prop_btn">
-                <div class="prop_icon">L</div>
+                <div class="prop_icon">${Object.keys(productsType[i].sizes)[2].toUpperCase()}</div>
                 <div class="prop_value">${products[i].sizes.l.size}</div>
               </button>
             </div>
@@ -89,7 +89,7 @@ const createModal = (products, i) => {
           </div>
           <div class="total">
             <h3 class="total_title">Total:</h3>
-            <div class="total_sum">$</div>
+            <div class="total_sum">$${products[i].price}</div>
           </div>
           <div class="alert">
            <div class="alert_icon">
@@ -97,12 +97,12 @@ const createModal = (products, i) => {
             <p class="alert_text">The cost is not final. Download our mobile app to see the final price and place your order. Earn loyalty points and enjoy your favorite coffee with up to 20% discount.</p>
           </div>
           <button class="close_btn">Close</button>
-        </div></div>`)
+        </div></div>`);
+  
   closeModal();
-  chooseSize();
+  chooseSize(products, i);
   chooseAdd();
 }
-
 const closeModal = () => {
   const back = document.querySelector('.back');
   const modal = document.querySelector('.modal');
@@ -117,17 +117,35 @@ const closeModal = () => {
   })
 }
 
-const chooseSize = () => {
+const chooseSize = (products, i) => {
   const sizeBtns = document.querySelectorAll('.size .prop_btn');
-  sizeBtns.forEach((size) => {
-    size.addEventListener('click', () => {
-      sizeBtns.forEach((size) => {
-        size.classList.remove('prop_btn__active');
+  const sizeName = document.querySelectorAll('.prop_icon');
+  let sizePrice;
+  for (let x = 0; x < 3; x++) {
+      sizeBtns[x].addEventListener('click', () => {
+        sizeBtns.forEach((size) => {
+          size.classList.remove('prop_btn__active');
+        })
+      sizeBtns[x].classList.add('prop_btn__active');
+      for (let key in products[i].sizes) {
+        if (key === sizeName[x].textContent.toLowerCase()){
+          sizePrice = Number(products[x].sizes[key]["add-price"]);
+          calcSum(sizePrice);
+        };
+      }
       })
-      size.classList.add('prop_btn__active');
-    })
-  })
+  }
+  return sizePrice;
 }
+
+const calcSum = (price) => {
+  const total = document.querySelector('.total_sum');
+  let sum;
+  sum = (parseFloat(total.textContent.slice(1)) + price).toFixed(2);
+  console.log(sum);
+  total.innerHTML = `$${sum}`;
+}
+
 
 const chooseAdd = () => {
   const addBtns = document.querySelectorAll('.additives .prop_btn');
@@ -140,6 +158,8 @@ const chooseAdd = () => {
     })
   })
 }
+
+
 //modal end
 
 const checkProduct = () => {
@@ -207,7 +227,7 @@ const createCards = (products, i, length) => {
     menuBody.insertAdjacentHTML('beforeend', `<div class="menu-item opacity"><div class="item-photo"><img src="/assets/images/menu/${products[i].name}.jpg" alt="${products[i].name}"></div><div class="item-description"><div><h3 class="item-title">${products[i].name}</h3><p class="item-content">${products[i].description}</p></div><span class="item-price">${products[i].price}</span></div></div>`);
   }
   const menuItem = document.querySelectorAll('.menu-item');
-  
+
   menuItem.forEach((item) => {
     item.addEventListener('click', () => {
       let j = Array.from(menuItem).indexOf(item);
