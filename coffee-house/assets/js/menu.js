@@ -99,10 +99,9 @@ const createModal = (products, i) => {
           </div>
           <button class="close_btn">Close</button>
         </div></div>`);
-  
   closeModal();
   chooseSize(products, i);
-  chooseAdd();
+  chooseAdd(products, i);
 }
 const closeModal = () => {
   const back = document.querySelector('.back');
@@ -141,29 +140,42 @@ const chooseSize = (products, i) => {
 }
 
 const chooseAdd = (products, i) => {
-  let addPrise;
+  let addPrice;
   const addBtns = document.querySelectorAll('.additives .prop_btn');
+  const addName = document.querySelectorAll('.additives .prop_value');
   addBtns.forEach((add) => {
     add.addEventListener('click', () => {
       add.classList.toggle('prop_btn__active');
+      for (let x = 0; x < 3; x++){
+        if (products[i].additives[x].name === addName[Array.from(addBtns).indexOf(add)].textContent){
+          addPrice = parseFloat(products[i].additives[x]["add-price"]);
+        };
+      }
+      if (add.classList.contains('prop_btn__active')){
+        addPrice = addPrice;
+        calcAdd(addPrice);
+      } else {
+        addPrice = -addPrice;
+        calcAdd(addPrice);
+      }
     })
-  })
-  // products[i].additives.forEach {
-  //   if (key === sizeName[x].textContent.toLowerCase()){
-  //     sizePrice = Number(products[x].sizes[key]["add-price"]);
-  //     calcSum(products, i, sizePrice);
-  //   };
-  // }
+})
 }
 
 const calcSum = (products, i, price) => {
   const total = document.querySelector('.total_sum');
   let sum;
   sum = (parseFloat(products[i].price) + price).toFixed(2);
-  console.log(sum);
   total.innerHTML = `$${sum}`;
 }
 
+const calcAdd = (price) => {
+  const total = document.querySelector('.total_sum');
+  let sum;
+  sum = (parseFloat(total.textContent.slice(1)) + price).toFixed(2);
+  total.innerHTML = `$${sum}`;
+  console.log(sum);
+}
 
 
 
