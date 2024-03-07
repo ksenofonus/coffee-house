@@ -138,7 +138,22 @@ const chooseSize = (products, i) => {
       }
       })
   }
-  return sizePrice;
+}
+
+const chooseAdd = (products, i) => {
+  let addPrise;
+  const addBtns = document.querySelectorAll('.additives .prop_btn');
+  addBtns.forEach((add) => {
+    add.addEventListener('click', () => {
+      add.classList.toggle('prop_btn__active');
+    })
+  })
+  // products[i].additives.forEach {
+  //   if (key === sizeName[x].textContent.toLowerCase()){
+  //     sizePrice = Number(products[x].sizes[key]["add-price"]);
+  //     calcSum(products, i, sizePrice);
+  //   };
+  // }
 }
 
 const calcSum = (products, i, price) => {
@@ -150,17 +165,7 @@ const calcSum = (products, i, price) => {
 }
 
 
-const chooseAdd = () => {
-  const addBtns = document.querySelectorAll('.additives .prop_btn');
-  addBtns.forEach((add) => {
-    add.addEventListener('click', () => {
-      addBtns.forEach((add) => {
-        add.classList.remove('prop_btn__active');
-      })
-      add.classList.add('prop_btn__active');
-    })
-  })
-}
+
 
 
 //modal end

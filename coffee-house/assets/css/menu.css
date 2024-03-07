@@ -567,7 +567,7 @@ body.no-scroll {
     border: 1px solid #E1D4C9;
     color: #403F3D;
   }
-  .prop_btn__active:hover {
+  .size .prop_btn__active:hover {
     cursor: auto;
   }
   .close_btn:hover {
