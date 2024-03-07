@@ -133,7 +133,7 @@ const chooseSize = (products, i) => {
       for (let key in products[i].sizes) {
         if (key === sizeName[x].textContent.toLowerCase()){
           sizePrice = Number(products[x].sizes[key]["add-price"]);
-          calcSum(sizePrice);
+          calcSum(products, i, sizePrice);
         };
       }
       })
@@ -141,10 +141,10 @@ const chooseSize = (products, i) => {
   return sizePrice;
 }
 
-const calcSum = (price) => {
+const calcSum = (products, i, price) => {
   const total = document.querySelector('.total_sum');
   let sum;
-  sum = (parseFloat(total.textContent.slice(1)) + price).toFixed(2);
+  sum = (parseFloat(products[i].price) + price).toFixed(2);
   console.log(sum);
   total.innerHTML = `$${sum}`;
 }
