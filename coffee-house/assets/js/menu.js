@@ -57,40 +57,16 @@ const createModal = (products, i) => {
           <div class="prop size">
             <p class="prop_title">Size</p>
             <div class="prop_tabs">
-              <button class="prop_btn prop_btn__active">
-                <div class="prop_icon">${Object.keys(productsType[i].sizes)[0].toUpperCase()}</div>
-                <div class="prop_value">${products[i].sizes.s.size}</div>
-              </button>
-              <button class="prop_btn">
-                <div class="prop_icon">${Object.keys(productsType[i].sizes)[1].toUpperCase()}</div>
-                <div class="prop_value">${products[i].sizes.m.size}</div>
-              </button>
-              <button class="prop_btn">
-                <div class="prop_icon">${Object.keys(productsType[i].sizes)[2].toUpperCase()}</div>
-                <div class="prop_value">${products[i].sizes.l.size}</div>
-              </button>
             </div>
           </div>
           <div class="prop additives">
             <p class="prop_title">Additives</p>
             <div class="prop_tabs">
-              <button class="prop_btn">
-                <div class="prop_icon">1</div>
-                <div class="prop_value">${products[i].additives[0].name}</div>
-              </button>
-              <button class="prop_btn">
-                <div class="prop_icon">2</div>
-                <div class="prop_value">${products[i].additives[1].name}</div>
-              </button>
-              <button class="prop_btn">
-                <div class="prop_icon">3</div>
-                <div class="prop_value">${products[i].additives[2].name}</div>
-              </button>
             </div>
           </div>
           <div class="total">
             <h3 class="total_title">Total:</h3>
-            <div class="total_sum">$${products[i].price}</div>
+            <span class="total_sum">$${products[i].price}</span>
           </div>
           <div class="alert">
            <div class="alert_icon">
@@ -99,9 +75,24 @@ const createModal = (products, i) => {
           </div>
           <button class="close_btn">Close</button>
         </div></div>`);
+  const sizeBtnWrap = document.querySelector('.size .prop_tabs');
+  for (let m=0; m < Object.keys(products[i].sizes).length; m++) {
+    sizeBtnWrap.insertAdjacentHTML('beforeend', `<button class="prop_btn" id="${products[i].sizes[Object.keys(products[i].sizes)[m]]['add-price']}">
+    <div class="prop_icon">${Object.keys(productsType[i].sizes)[m].toUpperCase()}</div>
+    <div class="prop_value">${products[i].sizes[Object.keys(products[i].sizes)[m]].size}</div>
+  </button>`)
+  }
+  const addBtnWrap = document.querySelector('.additives .prop_tabs');
+  for (let m=0; m < products[i].additives.length; m++) {
+    addBtnWrap.insertAdjacentHTML('beforeend', `<button class="prop_btn" id="${products[i].additives[m]['add-price']}">
+    <div class="prop_icon">${m + 1}</div>
+    <div class="prop_value">${products[i].additives[m].name}</div>
+  </button>`)
+  }
   closeModal();
   chooseSize(products, i);
   chooseAdd(products, i);
+  
 }
 const closeModal = () => {
   const back = document.querySelector('.back');
@@ -121,63 +112,45 @@ const closeModal = () => {
 
 const chooseSize = (products, i) => {
   const sizeBtns = document.querySelectorAll('.size .prop_btn');
-  const sizeName = document.querySelectorAll('.prop_icon');
-  let sizePrice;
+  sizeBtns[0].classList.add('prop_btn__active');
   for (let x = 0; x < 3; x++) {
-      sizeBtns[x].addEventListener('click', () => {
+      sizeBtns[x].addEventListener('click', (event) => {
         sizeBtns.forEach((size) => {
           size.classList.remove('prop_btn__active');
         })
       sizeBtns[x].classList.add('prop_btn__active');
-      for (let key in products[i].sizes) {
-        if (key === sizeName[x].textContent.toLowerCase()){
-          sizePrice = Number(products[x].sizes[key]["add-price"]);
-          calcSum(products, i, sizePrice);
-        };
+      count(products, i, event);
       }
-      })
+      )
   }
 }
 
 const chooseAdd = (products, i) => {
-  let addPrice;
   const addBtns = document.querySelectorAll('.additives .prop_btn');
-  const addName = document.querySelectorAll('.additives .prop_value');
   addBtns.forEach((add) => {
-    add.addEventListener('click', () => {
+    add.addEventListener('click', (event) => {
       add.classList.toggle('prop_btn__active');
-      for (let x = 0; x < 3; x++){
-        if (products[i].additives[x].name === addName[Array.from(addBtns).indexOf(add)].textContent){
-          addPrice = parseFloat(products[i].additives[x]["add-price"]);
-        };
+      count(products, i, event);
       }
-      if (add.classList.contains('prop_btn__active')){
-        addPrice = addPrice;
-        calcAdd(addPrice);
-      } else {
-        addPrice = -addPrice;
-        calcAdd(addPrice);
-      }
-    })
+    )
 })
 }
-
-const calcSum = (products, i, price) => {
+const count = (products, i, event) => {
   const total = document.querySelector('.total_sum');
-  let sum;
-  sum = (parseFloat(products[i].price) + price).toFixed(2);
-  total.innerHTML = `$${sum}`;
+  const btns = document.querySelectorAll('.prop_btn');
+  let startPrice = Number(products[i].price);
+  let count = 0;
+  let sum = 0;
+  if(event.currentTarget) {
+    for (let i=0; i < btns.length; i++) {
+      if (btns[i].classList.contains('prop_btn__active')) {
+        count = count + Number(btns[i].id);
+      }
+    }
+    sum = startPrice + count;
+    total.textContent =`$${sum.toFixed(2)}`;
+  }
 }
-
-const calcAdd = (price) => {
-  const total = document.querySelector('.total_sum');
-  let sum;
-  sum = (parseFloat(total.textContent.slice(1)) + price).toFixed(2);
-  total.innerHTML = `$${sum}`;
-  console.log(sum);
-}
-
-
 
 
 //modal end
