@@ -48,7 +48,7 @@ const createModal = (products, i) => {
   document.body.classList.add('no-scroll');
   document.body.insertAdjacentHTML('afterbegin', `<div class="back"></div>
     <div class="modal">
-        <div class="item-photo"><img src="/assets/images/menu/${products[i].name}.jpg" alt="${products[i].name}"></div>
+        <div class="item-photo"><img src="../assets/images/menu/${products[i].name}.jpg" alt="${products[i].name}"></div>
         <div class="item-description">
           <div class="item_name">
             <h3 class="item-title">${products[i].name}</h3>
