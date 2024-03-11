@@ -48,7 +48,7 @@ const createModal = (products, i) => {
   document.body.classList.add('no-scroll');
   document.body.insertAdjacentHTML('afterbegin', `<div class="back"></div>
     <div class="modal">
-        <div class="item-photo"><img src="../assets/images/menu/${products[i].name}.jpg" alt="${products[i].name}"></div>
+        <div class="item-photo"><img src="../assets/images/menu/${products[i].name.replace(/\s+/g, '')}.jpg" alt="${products[i].name}"></div>
         <div class="item-description">
           <div class="item_name">
             <h3 class="item-title">${products[i].name}</h3>
@@ -217,7 +217,7 @@ wchange();
 
 const createCards = (products, i, length) => {
   for (i; i < length; i++) {
-    menuBody.insertAdjacentHTML('beforeend', `<div class="menu-item opacity"><div class="item-photo"><img src="/assets/images/menu/${products[i].name}.jpg" alt="${products[i].name}"></div><div class="item-description"><div><h3 class="item-title">${products[i].name}</h3><p class="item-content">${products[i].description}</p></div><span class="item-price">${products[i].price}</span></div></div>`);
+    menuBody.insertAdjacentHTML('beforeend', `<div class="menu-item opacity"><div class="item-photo"><img src="../assets/images/menu/${products[i].name.replace(/\s+/g, '')}.jpg" alt="${products[i].name}"></div><div class="item-description"><div><h3 class="item-title">${products[i].name}</h3><p class="item-content">${products[i].description}</p></div><span class="item-price">${products[i].price}</span></div></div>`);
   }
   const menuItem = document.querySelectorAll('.menu-item');
 
