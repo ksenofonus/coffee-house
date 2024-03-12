@@ -112,6 +112,7 @@ const createModal = (products, i) => {
 const closeModal = () => {
   const back = document.querySelector(".back");
   const modalWrapper = document.querySelector(".modal_wrapper");
+  const modalWindow = document.querySelector(".modal");
   const closeModal = document.querySelector(".close_btn");
   const close = () => {
     back.remove();
@@ -120,7 +121,12 @@ const closeModal = () => {
   };
   back.addEventListener("click", () => close());
   closeModal.addEventListener("click", () => close());
-  modalWrapper.addEventListener("click", () => close());
+  modalWrapper.addEventListener("click", (event) => {
+    let isModal = event.target === modalWindow || modalWindow.contains(event.target);
+    if (!isModal) {
+      close();
+    }
+  });
 };
 
 const chooseSize = (products, i) => {
