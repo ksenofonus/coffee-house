@@ -47,6 +47,7 @@ const menuItem = document.querySelectorAll('.menu-item');
 const createModal = (products, i) => {
   document.body.classList.add('no-scroll');
   document.body.insertAdjacentHTML('afterbegin', `<div class="back"></div>
+    <div class="modal_wrapper">
     <div class="modal">
         <div class="item-photo"><img src="../assets/images/menu/${products[i].name.replace(/\s+/g, '')}.jpg" alt="${products[i].name}"></div>
         <div class="item-description">
@@ -69,12 +70,11 @@ const createModal = (products, i) => {
             <span class="total_sum">$${products[i].price}</span>
           </div>
           <div class="alert">
-           <div class="alert_icon">
-            </div>
+           <div class="alert_icon"></div>
             <p class="alert_text">The cost is not final. Download our mobile app to see the final price and place your order. Earn loyalty points and enjoy your favorite coffee with up to 20% discount.</p>
           </div>
           <button class="close_btn">Close</button>
-        </div></div>`);
+        </div></div></div>`);
   const sizeBtnWrap = document.querySelector('.size .prop_tabs');
   for (let m=0; m < Object.keys(products[i].sizes).length; m++) {
     sizeBtnWrap.insertAdjacentHTML('beforeend', `<button class="prop_btn" id="${products[i].sizes[Object.keys(products[i].sizes)[m]]['add-price']}">
@@ -96,18 +96,16 @@ const createModal = (products, i) => {
 }
 const closeModal = () => {
   const back = document.querySelector('.back');
-  const modal = document.querySelector('.modal');
+  const modalWrapper = document.querySelector('.modal_wrapper')
   const closeModal = document.querySelector('.close_btn');
-  back.addEventListener('click', () => {
+  const close = () => {
     back.remove();
-    modal.remove();
+    modalWrapper.remove();
     document.body.classList.remove('no-scroll');
-  })
-  closeModal.addEventListener('click', () => {
-    back.remove();
-    modal.remove();
-    document.body.classList.remove('no-scroll');
-  })
+  }
+  back.addEventListener('click', () => close())
+  closeModal.addEventListener('click', () => close())
+  modalWrapper.addEventListener('click', () => close())
 }
 
 const chooseSize = (products, i) => {
